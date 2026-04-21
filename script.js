@@ -21,7 +21,7 @@ document.querySelectorAll("details").forEach((detail) => {
   });
 });
 
-const externalToolUrl = "https://你的承接页URL";
+const externalToolUrl = "https://www.aicovea.com/gpt-image-2";
 
 document.querySelectorAll("[data-tool-tab]").forEach((tab) => {
   tab.addEventListener("click", () => {
