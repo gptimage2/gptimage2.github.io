@@ -1264,6 +1264,21 @@ details p {
   background: var(--surface-strong);
 }
 
+.prompt-shortcuts {
+  margin-top: 1.1rem;
+  padding: 1rem;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.7);
+}
+
+.shortcut-label {
+  margin-bottom: 0.65rem;
+  color: var(--muted);
+  font-size: 0.9rem;
+  font-weight: 780;
+}
+
 .use-case-grid.four {
   grid-template-columns: repeat(4, minmax(0, 1fr));
 }
