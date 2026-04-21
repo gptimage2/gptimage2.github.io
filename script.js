@@ -72,3 +72,73 @@ document.querySelectorAll("[data-count-input]").forEach((input) => {
   input.addEventListener("input", updateCount);
   updateCount();
 });
+
+document.querySelectorAll("[data-copy-prompt]").forEach((button) => {
+  button.addEventListener("click", async () => {
+    const card = button.closest(".prompt-example-card");
+    const prompt = card?.querySelector(".prompt-body")?.textContent?.trim();
+
+    if (!prompt) {
+      return;
+    }
+
+    try {
+      await navigator.clipboard.writeText(prompt);
+    } catch (error) {
+      const fallback = document.createElement("textarea");
+      fallback.value = prompt;
+      fallback.setAttribute("readonly", "");
+      fallback.style.position = "fixed";
+      fallback.style.opacity = "0";
+      document.body.appendChild(fallback);
+      fallback.select();
+      document.execCommand("copy");
+      document.body.removeChild(fallback);
+    }
+
+    const originalText = button.textContent;
+    button.textContent = "Copied";
+    button.classList.add("is-copied");
+
+    window.setTimeout(() => {
+      button.textContent = originalText || "Copy";
+      button.classList.remove("is-copied");
+    }, 1400);
+  });
+});
+
+document.querySelectorAll("[data-prompt-chip]").forEach((chip) => {
+  chip.addEventListener("click", () => {
+    const prompt = chip.getAttribute("data-prompt") || chip.textContent || "";
+    const input = document.querySelector("[data-generator-prompt]");
+
+    if (input instanceof HTMLTextAreaElement) {
+      input.value = prompt.trim();
+      input.dispatchEvent(new Event("input", { bubbles: true }));
+      input.focus();
+    }
+  });
+});
+
+document.querySelectorAll("[data-generate-image]").forEach((button) => {
+  button.addEventListener("click", () => {
+    const workbench = button.closest(".generator-workbench");
+    const results = workbench?.querySelector("[data-generator-results]");
+
+    if (!results) {
+      return;
+    }
+
+    button.disabled = true;
+    button.textContent = "Generating...";
+    results.classList.remove("has-result");
+    results.classList.add("is-loading");
+
+    window.setTimeout(() => {
+      results.classList.remove("is-loading");
+      results.classList.add("has-result");
+      button.disabled = false;
+      button.textContent = "Generate Image";
+    }, 1800);
+  });
+});
