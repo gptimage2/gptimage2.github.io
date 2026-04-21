@@ -1,0 +1,1316 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GPT Image 2 Generator: Try Prompts, Posters & Mockups</title>
+  <meta name="description" content="Try a GPT Image 2 Generator for posters, product shots, UI mockups, portraits, and text-heavy visuals. Explore prompts, examples, and concept generation online.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://gptimage2.github.io/gpt-image-2-generator.html">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="GPT Image 2 Generator: Try Prompts, Posters & Mockups">
+  <meta property="og:description" content="Try a GPT Image 2 Generator for posters, product shots, UI mockups, portraits, and text-heavy visuals. Explore prompts, examples, and concept generation online.">
+  <meta property="og:url" content="https://gptimage2.github.io/gpt-image-2-generator.html">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="GPT Image 2 Generator: Try Prompts, Posters & Mockups">
+  <meta name="twitter:description" content="Try a GPT Image 2 Generator for posters, product shots, UI mockups, portraits, and text-heavy visuals. Explore prompts, examples, and concept generation online.">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f7f8fb;
+      --surface: #ffffff;
+      --surface-strong: #f1f5ff;
+      --text: #172033;
+      --muted: #5d6980;
+      --line: #dfe5f1;
+      --blue: #2458ff;
+      --blue-dark: #173bb4;
+      --green: #0f8f72;
+      --shadow: 0 18px 50px rgba(28, 45, 84, 0.08);
+      --radius: 8px;
+      --max: 1120px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-size: 16px;
+      line-height: 1.65;
+      letter-spacing: 0;
+    }
+
+    a {
+      color: var(--blue);
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: var(--blue-dark);
+    }
+
+    p {
+      margin: 0 0 1rem;
+    }
+
+    h1,
+    h2,
+    h3 {
+      margin: 0;
+      color: var(--text);
+      line-height: 1.12;
+      letter-spacing: 0;
+    }
+
+    h1 {
+      max-width: 780px;
+      font-size: clamp(2.8rem, 4.8vw, 4.2rem);
+    }
+
+    h2 {
+      font-size: clamp(2rem, 3.4vw, 2.7rem);
+    }
+
+    h3 {
+      font-size: 1.08rem;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      width: 100%;
+      min-height: 72px;
+      padding: 0 5vw;
+      background: rgba(255, 255, 255, 0.88);
+      border-bottom: 1px solid rgba(223, 229, 241, 0.78);
+      backdrop-filter: blur(16px);
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.7rem;
+      color: var(--text);
+      font-weight: 760;
+    }
+
+    .brand:hover {
+      color: var(--text);
+    }
+
+    .brand-mark {
+      display: grid;
+      width: 34px;
+      height: 34px;
+      place-items: center;
+      border-radius: 8px;
+      color: #fff;
+      background: linear-gradient(135deg, var(--blue), #7457ff);
+      font-size: 0.82rem;
+    }
+
+    .site-nav {
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+
+    .site-nav a {
+      padding: 0.55rem 0.85rem;
+      border-radius: 8px;
+      color: var(--muted);
+      font-size: 0.95rem;
+      font-weight: 650;
+    }
+
+    .site-nav a:hover,
+    .site-nav a[aria-current="page"] {
+      color: var(--text);
+      background: var(--surface-strong);
+    }
+
+    .nav-toggle {
+      display: none;
+      min-height: 40px;
+      padding: 0 0.9rem;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+      color: var(--text);
+      font: inherit;
+      font-weight: 700;
+    }
+
+    .page-hero {
+      width: min(980px, calc(100% - 10vw));
+      margin: 0 auto;
+      padding: 4.6rem 0 2.8rem;
+    }
+
+    .eyebrow {
+      margin-bottom: 0.9rem;
+      color: var(--green);
+      font-size: 0.78rem;
+      font-weight: 820;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .hero-copy {
+      max-width: 760px;
+      margin-top: 1.1rem;
+      color: var(--muted);
+      font-size: clamp(1.06rem, 1.6vw, 1.24rem);
+    }
+
+    .hero-support {
+      max-width: 760px;
+      margin: 0.6rem 0 0;
+      color: #46536b;
+      font-size: 0.98rem;
+      font-weight: 700;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.85rem;
+      margin-top: 1.5rem;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 0.85rem 1.05rem;
+      border-radius: 8px;
+      font-weight: 780;
+      line-height: 1.2;
+    }
+
+    .button.primary {
+      color: #fff;
+      background: var(--blue);
+      box-shadow: 0 12px 28px rgba(36, 88, 255, 0.24);
+    }
+
+    .button.primary:hover {
+      color: #fff;
+      background: var(--blue-dark);
+    }
+
+    .button.secondary {
+      color: var(--text);
+      background: #fff;
+      border: 1px solid var(--line);
+    }
+
+    .button.secondary:hover {
+      color: var(--blue-dark);
+      border-color: #b9c7ec;
+    }
+
+    .generator-shell,
+    .content-section,
+    .site-footer {
+      width: min(var(--max), calc(100% - 10vw));
+      margin: 0 auto;
+    }
+
+    .generator-shell {
+      padding: 0 0 4rem;
+    }
+
+    .generator-workbench {
+      display: grid;
+      grid-template-columns: minmax(0, 1.05fr) minmax(420px, 0.95fr);
+      gap: 1.25rem;
+      align-items: stretch;
+    }
+
+    .generator-card,
+    .preview-card,
+    .card,
+    .prompt-example,
+    .reason-card,
+    .compare-box,
+    .resource-card,
+    details {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--surface);
+      box-shadow: var(--shadow);
+    }
+
+    .generator-card,
+    .preview-card {
+      min-height: 670px;
+      padding: clamp(1.45rem, 2.4vw, 2rem);
+    }
+
+    .tool-panel-heading {
+      margin-bottom: 1.2rem;
+    }
+
+    .tool-panel-heading h2 {
+      font-size: clamp(1.55rem, 2.4vw, 2.25rem);
+    }
+
+    .field-label {
+      display: block;
+      margin: 1.1rem 0 0.45rem;
+      color: var(--text);
+      font-size: 1rem;
+      font-weight: 820;
+    }
+
+    .prompt-input {
+      width: 100%;
+      min-height: 210px;
+      padding: 0.9rem 1rem;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+      color: var(--text);
+      font: inherit;
+      line-height: 1.5;
+      resize: vertical;
+      box-shadow: 0 4px 14px rgba(28, 45, 84, 0.04);
+    }
+
+    .prompt-input:focus {
+      outline: 3px solid rgba(36, 88, 255, 0.14);
+      border-color: #9db0ff;
+    }
+
+    .char-count {
+      margin-top: 0.55rem;
+      color: var(--muted);
+      font-weight: 650;
+    }
+
+    .generator-controls {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.4rem 1rem;
+      margin-top: 0.6rem;
+    }
+
+    .control-group {
+      margin-top: 0.85rem;
+    }
+
+    .option-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .option-chip,
+    .prompt-chip,
+    .copy-button {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+      color: var(--text);
+      font: inherit;
+      font-weight: 760;
+      cursor: pointer;
+    }
+
+    .option-chip {
+      min-height: 38px;
+      padding: 0 0.8rem;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .option-chip.is-selected,
+    .option-chip:hover,
+    .prompt-chip:hover {
+      color: var(--blue-dark);
+      border-color: #b9c7ec;
+      background: var(--surface-strong);
+    }
+
+    .generate-button {
+      width: 100%;
+      min-height: 62px;
+      margin-top: 1.6rem;
+      border: 0;
+      border-radius: 8px;
+      color: #111827;
+      background: #ffc928;
+      font: inherit;
+      font-size: 1.02rem;
+      font-weight: 820;
+      cursor: pointer;
+      box-shadow: 0 14px 28px rgba(255, 201, 40, 0.26);
+    }
+
+    .generate-button:hover {
+      background: #f5bc13;
+    }
+
+    .generate-button:disabled {
+      cursor: wait;
+      opacity: 0.82;
+    }
+
+    .tool-results {
+      position: relative;
+      min-height: 530px;
+      padding: 1rem;
+      border: 1px dashed var(--line);
+      border-radius: 8px;
+      background: #fbfcff;
+    }
+
+    .result-skeleton-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.85rem;
+    }
+
+    .skeleton-tile {
+      display: grid;
+      align-content: end;
+      min-height: 226px;
+      padding: 1rem;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      overflow: hidden;
+      background:
+        linear-gradient(135deg, rgba(36, 88, 255, 0.1), rgba(15, 143, 114, 0.12)),
+        #fff;
+    }
+
+    .skeleton-tile span {
+      display: block;
+      width: 72%;
+      height: 11px;
+      margin-bottom: 0.7rem;
+      border-radius: 999px;
+      background: rgba(23, 32, 51, 0.12);
+    }
+
+    .skeleton-tile strong {
+      color: rgba(23, 32, 51, 0.58);
+      font-size: 0.9rem;
+    }
+
+    .loading-state {
+      position: absolute;
+      inset: 1rem;
+      display: none;
+      place-items: center;
+      align-content: center;
+      gap: 1rem;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.92);
+      text-align: center;
+    }
+
+    .loading-state p {
+      margin: 0;
+      color: var(--muted);
+      font-weight: 760;
+    }
+
+    .loading-bar {
+      width: min(240px, 80%);
+      height: 8px;
+      border-radius: 999px;
+      overflow: hidden;
+      background: var(--surface-strong);
+    }
+
+    .loading-bar::after {
+      content: "";
+      display: block;
+      width: 42%;
+      height: 100%;
+      border-radius: inherit;
+      background: var(--blue);
+      animation: loading-slide 1.2s ease-in-out infinite;
+    }
+
+    @keyframes loading-slide {
+      0% {
+        transform: translateX(-120%);
+      }
+
+      100% {
+        transform: translateX(260%);
+      }
+    }
+
+    .aicovea-card {
+      display: none;
+      min-height: 496px;
+      padding: clamp(1.25rem, 3vw, 2.2rem);
+      border: 1px solid #b9c7ec;
+      border-radius: 8px;
+      background:
+        linear-gradient(135deg, rgba(36, 88, 255, 0.08), rgba(15, 143, 114, 0.08)),
+        #fff;
+      place-items: center;
+      align-content: center;
+      text-align: center;
+    }
+
+    .aicovea-card h3 {
+      max-width: 440px;
+      font-size: clamp(1.8rem, 3vw, 2.45rem);
+    }
+
+    .aicovea-card p:not(.eyebrow) {
+      max-width: 420px;
+      color: var(--muted);
+    }
+
+    .tool-results.is-loading .loading-state {
+      display: grid;
+    }
+
+    .tool-results.has-result .result-skeleton-grid,
+    .tool-results.is-loading .result-skeleton-grid {
+      opacity: 0.22;
+    }
+
+    .tool-results.has-result .aicovea-card {
+      display: grid;
+    }
+
+    .prompt-shortcuts {
+      margin-top: 1.1rem;
+      padding: 1rem;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.7);
+    }
+
+    .shortcut-label {
+      margin-bottom: 0.65rem;
+      color: var(--muted);
+      font-size: 0.9rem;
+      font-weight: 780;
+    }
+
+    .prompt-chip-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.65rem;
+    }
+
+    .prompt-chip {
+      min-height: 42px;
+      padding: 0 0.9rem;
+      border-radius: 999px;
+      font-size: 0.94rem;
+      box-shadow: 0 8px 18px rgba(28, 45, 84, 0.06);
+    }
+
+    .content-section {
+      padding: 4rem 0;
+      border-top: 1px solid rgba(223, 229, 241, 0.8);
+    }
+
+    .section-heading {
+      max-width: 820px;
+      margin-bottom: 1.75rem;
+    }
+
+    .section-heading p,
+    .card p,
+    .reason-card p,
+    .prompt-example p,
+    .compare-box p,
+    .resource-card span,
+    details p,
+    .site-footer p {
+      color: var(--muted);
+    }
+
+    .scenario-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    .card {
+      min-height: 250px;
+      padding: 1.25rem;
+    }
+
+    .card h3,
+    .reason-card h3,
+    .prompt-example h3 {
+      margin-bottom: 0.65rem;
+    }
+
+    .prompt-examples-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    .prompt-example {
+      display: grid;
+      gap: 0.9rem;
+      align-content: start;
+      padding: 1.25rem;
+    }
+
+    .prompt-text {
+      margin-bottom: 0;
+      padding: 1rem;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fbfcff;
+      color: #415069;
+      font-size: 0.95rem;
+    }
+
+    .copy-button {
+      justify-self: start;
+      min-height: 40px;
+      padding: 0 0.85rem;
+      font-size: 0.9rem;
+    }
+
+    .copy-button:hover,
+    .copy-button.is-copied {
+      color: #fff;
+      border-color: var(--blue);
+      background: var(--blue);
+    }
+
+    .reason-grid {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    .reason-card {
+      padding: 1.15rem;
+      background: #fff;
+    }
+
+    .compare-box {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      gap: 1rem;
+      padding: 1.3rem;
+    }
+
+    .compare-column {
+      padding: 1rem;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fbfcff;
+    }
+
+    .compare-column h3 {
+      margin-bottom: 0.6rem;
+    }
+
+    .compare-action {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.85rem;
+      margin-top: 1.1rem;
+    }
+
+    .faq-list {
+      display: grid;
+      gap: 0.85rem;
+    }
+
+    summary {
+      cursor: pointer;
+      min-height: 58px;
+      padding: 1rem 1.15rem;
+      color: var(--text);
+      font-weight: 780;
+    }
+
+    details p {
+      padding: 0 1.15rem 1.1rem;
+    }
+
+    .resource-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    .resource-card {
+      display: grid;
+      gap: 0.45rem;
+      min-height: 150px;
+      padding: 1.2rem;
+      color: var(--text);
+    }
+
+    .resource-card:hover {
+      color: var(--text);
+      border-color: #b9c7ec;
+      transform: translateY(-2px);
+    }
+
+    .resource-card strong {
+      font-size: 1.05rem;
+    }
+
+    .site-footer {
+      display: flex;
+      justify-content: space-between;
+      gap: 2rem;
+      padding: 3rem 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .site-footer div {
+      max-width: 620px;
+    }
+
+    .site-footer nav {
+      display: flex;
+      flex-wrap: wrap;
+      align-content: start;
+      gap: 0.8rem;
+    }
+
+    .site-footer a {
+      color: var(--muted);
+      font-weight: 700;
+    }
+
+    .site-footer a:hover {
+      color: var(--blue-dark);
+    }
+
+    @media (max-width: 980px) {
+      .generator-workbench,
+      .scenario-grid,
+      .prompt-examples-grid,
+      .reason-grid,
+      .compare-box,
+      .resource-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .generator-card,
+      .preview-card,
+      .card {
+        min-height: auto;
+      }
+    }
+
+    @media (max-width: 860px) {
+      .site-header {
+        min-height: 64px;
+      }
+
+      .nav-toggle {
+        display: inline-flex;
+        align-items: center;
+      }
+
+      .site-nav {
+        position: absolute;
+        top: 64px;
+        right: 5vw;
+        left: 5vw;
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        padding: 0.75rem;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: #fff;
+        box-shadow: var(--shadow);
+      }
+
+      .site-nav.is-open {
+        display: flex;
+      }
+
+      .site-nav a {
+        padding: 0.8rem;
+      }
+
+      .page-hero {
+        padding: 3.4rem 0 2.4rem;
+      }
+
+      .generator-controls {
+        grid-template-columns: 1fr;
+      }
+
+      .content-section {
+        padding: 3rem 0;
+      }
+
+      .site-footer {
+        flex-direction: column;
+      }
+    }
+
+    @media (max-width: 540px) {
+      body {
+        font-size: 15px;
+      }
+
+      .site-header,
+      .page-hero,
+      .generator-shell,
+      .content-section,
+      .site-footer {
+        width: min(100% - 2rem, var(--max));
+      }
+
+      .site-header {
+        width: 100%;
+        padding: 0 1rem;
+      }
+
+      .site-nav {
+        right: 1rem;
+        left: 1rem;
+      }
+
+      .hero-actions,
+      .button {
+        width: 100%;
+      }
+
+      .result-skeleton-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .skeleton-tile {
+        min-height: 170px;
+      }
+    }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is a GPT Image 2 Generator?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A GPT Image 2 Generator is a generator-style workspace for exploring image prompts, poster layouts, product concepts, UI mockups, portraits, and other visual ideas."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I try GPT Image 2 online?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "You can try a GPT Image 2 online concept workflow on this page by entering a prompt, choosing simple parameters, and exploring related image generation tools."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is this a free GPT Image 2 Generator?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "This page provides a free generator-style interface for prompt ideation and concept testing. It does not promise unlimited free access to external tools."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What can I create with it?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "You can explore ideas for posters, product photos, UI mockups, portraits, magazine covers, ad creatives, readable text images, and marketing visuals."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can it help with posters and product images?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. The page is useful for drafting poster generator prompts, product photo generator prompts, packaging concepts, and text-heavy visual directions."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Where can I find GPT Image 2 prompts?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The GPT Image 2 prompts page includes copy-ready examples for text rendering, cinematic scenes, product photography, UI mockups, and portraits."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/" aria-label="GPT Image 2 Hub home">
+      <span class="brand-mark">G2</span>
+      <span>GPT Image 2 Hub</span>
+    </a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+    <nav class="site-nav" id="site-nav" aria-label="Primary navigation">
+      <a href="/">Home</a>
+      <a href="/gpt-image-2-prompts.html">Prompts</a>
+      <a href="/gpt-image-2-generator.html" aria-current="page">Generator</a>
+      <a href="/gpt-image-2-demo.html">Demo</a>
+      <a href="/gpt-image-2-release-date.html">Release Date</a>
+      <a href="/gpt-image-2-vs-nanobanana.html">Vs Nano Banana</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <p class="eyebrow">Online concept tool</p>
+      <h1>GPT Image 2 Generator</h1>
+      <p class="hero-copy">Try a GPT Image 2 style image generator for posters, text-heavy designs, product shots, UI concepts, and cinematic visuals.</p>
+      <p class="hero-support">Best for poster layouts, readable text images, product concepts, app mockups, and visual idea testing.</p>
+      <div class="hero-actions">
+        <a class="button primary" href="#generator-tool">Generate Now</a>
+        <a class="button secondary" href="/gpt-image-2-prompts.html">Browse Prompts</a>
+      </div>
+    </section>
+
+    <section class="generator-shell" id="generator-tool" aria-label="GPT Image 2 Generator workspace">
+      <div class="generator-workbench">
+        <section class="generator-card" aria-label="Prompt and parameters">
+          <div class="tool-panel-heading">
+            <p class="eyebrow">Prompt</p>
+            <h2>Describe Your Image</h2>
+          </div>
+
+          <label class="field-label" for="generator-prompt">Prompt</label>
+          <textarea id="generator-prompt" class="prompt-input" rows="8" maxlength="2000" data-generator-prompt data-count-input placeholder="Design a futuristic coffee poster with bold readable typography, cinematic lighting, premium packaging, and a minimalist dark background."></textarea>
+          <div class="char-count" data-count-output>0 / 2000</div>
+
+          <div class="generator-controls">
+            <div class="control-group">
+              <label class="field-label">Aspect Ratio</label>
+              <div class="option-row" role="group" aria-label="Aspect ratio">
+                <button class="option-chip is-selected" type="button" data-select-chip>1:1</button>
+                <button class="option-chip" type="button" data-select-chip>16:9</button>
+                <button class="option-chip" type="button" data-select-chip>9:16</button>
+              </div>
+            </div>
+            <div class="control-group">
+              <label class="field-label">Style</label>
+              <div class="option-row" role="group" aria-label="Style">
+                <button class="option-chip is-selected" type="button" data-select-chip>Realistic</button>
+                <button class="option-chip" type="button" data-select-chip>Cinematic</button>
+                <button class="option-chip" type="button" data-select-chip>Product</button>
+                <button class="option-chip" type="button" data-select-chip>UI</button>
+              </div>
+            </div>
+            <div class="control-group">
+              <label class="field-label">Quality</label>
+              <div class="option-row" role="group" aria-label="Quality">
+                <button class="option-chip is-selected" type="button" data-select-chip>Standard</button>
+                <button class="option-chip" type="button" data-select-chip>High</button>
+              </div>
+            </div>
+            <div class="control-group">
+              <label class="field-label">Number of Images</label>
+              <div class="option-row" role="group" aria-label="Number of images">
+                <button class="option-chip is-selected" type="button" data-select-chip>1</button>
+                <button class="option-chip" type="button" data-select-chip>2</button>
+                <button class="option-chip" type="button" data-select-chip>4</button>
+              </div>
+            </div>
+          </div>
+
+          <button class="generate-button" type="button" data-generate-image>Generate Image</button>
+        </section>
+
+        <aside class="preview-card" aria-label="Generated image preview">
+          <div class="tool-panel-heading">
+            <p class="eyebrow">Preview</p>
+            <h2>Result Preview</h2>
+          </div>
+          <div class="tool-results" data-generator-results>
+            <div class="result-skeleton-grid" aria-label="Preview placeholders">
+              <div class="skeleton-tile">
+                <span></span>
+                <strong>Poster concept</strong>
+              </div>
+              <div class="skeleton-tile">
+                <span></span>
+                <strong>Product image</strong>
+              </div>
+              <div class="skeleton-tile">
+                <span></span>
+                <strong>UI mockup</strong>
+              </div>
+              <div class="skeleton-tile">
+                <span></span>
+                <strong>Text-heavy visual</strong>
+              </div>
+            </div>
+            <div class="loading-state" data-loading-state aria-live="polite">
+              <div class="loading-bar"></div>
+              <p>Preparing your visual concept...</p>
+            </div>
+            <div class="aicovea-card" data-aicovea-card>
+              <p class="eyebrow">Next step</p>
+              <h3>Explore More AI Image Tools</h3>
+              <p>For more image and video workflows, continue on AICovea.</p>
+              <a class="button primary" href="https://www.aicovea.com/" target="_blank" rel="noopener">Continue to AICovea</a>
+            </div>
+          </div>
+        </aside>
+      </div>
+
+      <div class="prompt-shortcuts" aria-label="Prompt shortcuts">
+        <p class="shortcut-label">Click a prompt chip to fill the generator:</p>
+        <div class="prompt-chip-row">
+          <button class="prompt-chip" type="button" data-prompt-chip data-prompt="Create a high-converting poster ad for a futuristic coffee brand. Show premium packaging in the foreground, bold readable headline text, cinematic side lighting, a minimalist dark background, subtle steam, and a refined editorial composition that leaves space for a short call-to-action.">poster ad</button>
+          <button class="prompt-chip" type="button" data-prompt-chip data-prompt="Design premium product packaging for a clean skincare serum. Show a frosted glass bottle and outer box on a stone surface, readable label hierarchy, soft studio lighting, botanical shadows, natural luxury colors, and realistic ecommerce photography details.">product packaging</button>
+          <button class="prompt-chip" type="button" data-prompt-chip data-prompt="Create a modern landing page UI mockup for an AI image generator. Include a hero headline, prompt input preview, primary CTA button, three feature cards, clean spacing, readable interface labels, and a polished SaaS design system.">landing page UI</button>
+          <button class="prompt-chip" type="button" data-prompt-chip data-prompt="Generate a realistic app screenshot for a mobile travel planner. Include a destination card, map preview, itinerary timeline, bottom navigation, readable labels, clean white interface, and calm blue accent colors.">app screenshot</button>
+          <button class="prompt-chip" type="button" data-prompt-chip data-prompt="Create a fashion portrait in a clean studio with directional softbox lighting, structured jacket, realistic skin texture, elegant posture, neutral backdrop, and editorial magazine styling for a premium campaign.">fashion portrait</button>
+          <button class="prompt-chip" type="button" data-prompt-chip data-prompt="Design a realistic magazine cover with the masthead 'FRAME', a main headline 'The New Visual Workflow', smaller cover lines, a clean desk scene, readable typography, strong hierarchy, and refined editorial lighting.">magazine cover</button>
+          <button class="prompt-chip" type="button" data-prompt-chip data-prompt="Create a typography flyer with the exact title 'TYPE NIGHT', a short subtitle, bold readable letters, high contrast layout, crisp alignment, minimal graphic shapes, and a realistic printed paper texture.">typography flyer</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section">
+      <div class="section-heading">
+        <p class="eyebrow">Creation paths</p>
+        <h2>What You Can Create with a GPT Image 2 Generator</h2>
+        <p>A GPT Image 2 Generator page works best when it helps you move from a rough idea to a concrete visual direction. The goal is not to replace a full design workflow. It is to quickly test composition, wording, scene detail, product styling, and whether a prompt is specific enough for an AI image generator.</p>
+      </div>
+      <div class="scenario-grid">
+        <article class="card">
+          <h3>Posters and Flyers</h3>
+          <p>Use the generator as a poster generator for campaign drafts, event flyers, launch announcements, and social graphics that need strong hierarchy. A good prompt can define the headline, subtitle, color palette, typography style, paper texture, and where the subject should sit so the visual feels intentional instead of random.</p>
+        </article>
+        <article class="card">
+          <h3>Product Photos</h3>
+          <p>For ecommerce and landing pages, the page can act like a product photo generator for early concept testing. Describe the object, surface, lighting, background, camera angle, and props. This is useful when you need a realistic direction for packaging, skincare, coffee, accessories, gadgets, or lifestyle product scenes.</p>
+        </article>
+        <article class="card">
+          <h3>UI Mockups</h3>
+          <p>A UI mockup generator prompt can help founders, designers, and marketers explain an app idea before producing high-fidelity screens. Include the screen type, content blocks, navigation, labels, spacing, and product category. The result can guide conversations about layout, tone, and visual hierarchy.</p>
+        </article>
+        <article class="card">
+          <h3>Portrait Concepts</h3>
+          <p>Portrait prompts are useful for campaign moodboards, brand profile concepts, editorial directions, and character studies. Specify lighting, wardrobe, expression, background, lens feel, and intended use. The generator helps explore portrait styles without pretending that the first concept is a final production asset.</p>
+        </article>
+        <article class="card">
+          <h3>Magazine Covers</h3>
+          <p>Magazine cover ideas combine composition, typography, image subject, and editorial mood. A strong prompt can name the masthead, cover line, secondary blurbs, layout style, and background photography. This makes it a practical testing ground for text-heavy visuals where readable words matter.</p>
+        </article>
+        <article class="card">
+          <h3>Ad Creatives</h3>
+          <p>Marketing teams can use a GPT Image 2 online workflow to test ad creative angles before writing a full brief. Try product-first, benefit-first, cinematic, and minimal variants. The best prompts define the offer, focal product, emotional tone, space for copy, and platform format.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="content-section">
+      <div class="section-heading">
+        <p class="eyebrow">Copy-ready examples</p>
+        <h2>Example Prompts by Use Case</h2>
+        <p>These prompts are written to be copied into the input box or adapted for another AI image generator. They include subject, style, layout, lighting, and text instructions so each example feels like a usable creative brief.</p>
+      </div>
+      <div class="prompt-examples-grid">
+        <article class="prompt-example">
+          <h3>Poster Generator Prompt</h3>
+          <p class="prompt-text">Create a modern poster ad for a premium sparkling water brand. Use the exact headline "OPEN THE BRIGHT SIDE" in bold readable typography, a chilled aluminum can in the center, citrus slices and condensation details, crisp studio lighting, a clean pale blue background, strong margins, and a layout that feels ready for a subway poster campaign.</p>
+          <button class="copy-button" type="button" data-copy-prompt>Copy</button>
+        </article>
+        <article class="prompt-example">
+          <h3>Product Packaging Prompt</h3>
+          <p class="prompt-text">Design a realistic product packaging scene for a specialty coffee bag named "North Peak Reserve". Show the bag standing upright on a stone counter, readable front label, natural morning window light, warm shadows, a small ceramic cup beside it, premium matte paper texture, and a clean ecommerce composition with no extra random text.</p>
+          <button class="copy-button" type="button" data-copy-prompt>Copy</button>
+        </article>
+        <article class="prompt-example">
+          <h3>UI Mockup Prompt</h3>
+          <p class="prompt-text">Generate a high-fidelity mobile app screenshot for a habit tracking product. Include a top greeting, weekly progress chart, three habit cards, a streak counter, and a bottom navigation bar with readable labels. Use a calm white interface, green accent color, soft shadows, realistic spacing, and polished app-store screenshot quality.</p>
+          <button class="copy-button" type="button" data-copy-prompt>Copy</button>
+        </article>
+        <article class="prompt-example">
+          <h3>Readable Text Prompt</h3>
+          <p class="prompt-text">Create a clean typography flyer for a design meetup. The title must read "TYPE NIGHT", the subtitle must read "Letters, Systems, Interfaces", and the small footer text must read "Friday 7 PM". Use high contrast black and white design, crisp alignment, generous whitespace, realistic printed paper texture, and keep every word legible.</p>
+          <button class="copy-button" type="button" data-copy-prompt>Copy</button>
+        </article>
+        <article class="prompt-example">
+          <h3>Portrait Prompt</h3>
+          <p class="prompt-text">Create an editorial portrait of a creative director in a quiet studio. Use natural window light, a dark structured jacket, relaxed confident expression, neutral background, shallow depth of field, realistic skin texture, sharp eye detail, and a refined magazine interview style suitable for a professional profile concept.</p>
+          <button class="copy-button" type="button" data-copy-prompt>Copy</button>
+        </article>
+        <article class="prompt-example">
+          <h3>Ad Creative Prompt</h3>
+          <p class="prompt-text">Create a social ad creative for a productivity app. Show a clean laptop screen with a task dashboard, a short readable headline "Plan Less, Finish More", soft morning desk lighting, notebook and coffee props, calm professional mood, clear space for copy, and a polished SaaS campaign style for a square ad format.</p>
+          <button class="copy-button" type="button" data-copy-prompt>Copy</button>
+        </article>
+      </div>
+    </section>
+
+    <section class="content-section">
+      <div class="section-heading">
+        <p class="eyebrow">Search intent</p>
+        <h2>Why People Search for a GPT Image 2 Generator</h2>
+        <p>Most searches around a GPT Image 2 free generator are practical. Users want a place to try GPT Image 2 style prompts, compare idea quality, and understand whether a visual direction is worth refining.</p>
+      </div>
+      <div class="reason-grid">
+        <article class="reason-card">
+          <h3>Fast concept testing</h3>
+          <p>Instead of writing a long design brief, users can test a concept in minutes. A generator-style page helps compare poster, product, portrait, and UI directions quickly before deciding which idea deserves more design time.</p>
+        </article>
+        <article class="reason-card">
+          <h3>Text-heavy image ideation</h3>
+          <p>Searchers often care about readable titles, labels, buttons, covers, and flyers. Prompting for text-heavy visuals requires clearer wording, exact phrases, and strong layout instructions, so examples are useful before trying a production workflow.</p>
+        </article>
+        <article class="reason-card">
+          <h3>Realistic product visualization</h3>
+          <p>Product teams want quick ways to explore packaging, ecommerce images, hero shots, and lifestyle photography. A product photo generator prompt can define lighting, surface, props, and camera angle before committing to a shoot.</p>
+        </article>
+        <article class="reason-card">
+          <h3>Landing page and app exploration</h3>
+          <p>Founders and designers search for UI mockup generator ideas when they need app screens, landing sections, dashboards, or onboarding visuals. The output can clarify hierarchy and product positioning even when it is only a concept.</p>
+        </article>
+        <article class="reason-card">
+          <h3>Marketing creative generation</h3>
+          <p>Marketers use AI image generator workflows to explore ad styles, campaign concepts, and social variants. The strongest prompts include offer, audience, format, focal object, copy space, and visual tone.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="content-section">
+      <div class="section-heading">
+        <p class="eyebrow">Workflow choice</p>
+        <h2>GPT Image 2 Generator vs Prompt Library</h2>
+      </div>
+      <div class="compare-box">
+        <div class="compare-column">
+          <h3>Use the generator page to test ideas</h3>
+          <p>The GPT Image 2 Generator page is best when you want to try a direction immediately. Type a prompt, choose a style or ratio, and see how the concept should be framed. It is useful for quick exploration, campaign drafts, product concepts, and prompt confidence checks.</p>
+        </div>
+        <div class="compare-column">
+          <h3>Use the prompt library to learn patterns</h3>
+          <p>The prompt library is better when you want copy-ready examples and reusable structures. It shows how to describe text rendering, cinematic scenes, product photography, UI prompts, and portraits with enough detail to guide a real image workflow.</p>
+        </div>
+      </div>
+      <div class="compare-action">
+        <a class="button primary" href="/gpt-image-2-prompts.html">Browse GPT Image 2 Prompts</a>
+      </div>
+    </section>
+
+    <section class="content-section faq-section">
+      <div class="section-heading">
+        <p class="eyebrow">FAQ</p>
+        <h2>Frequently Asked Questions</h2>
+      </div>
+      <div class="faq-list">
+        <details>
+          <summary>What is a GPT Image 2 Generator?</summary>
+          <p>A GPT Image 2 Generator is a generator-style interface for exploring image prompts, poster layouts, product photo concepts, UI mockups, portraits, and text-heavy visuals. This page is designed for concept testing and prompt discovery.</p>
+        </details>
+        <details>
+          <summary>Can I try GPT Image 2 online?</summary>
+          <p>You can try GPT Image 2 online as a concept workflow here by entering prompts and choosing simple creative parameters. The page helps with prompt structure and visual ideation without making hard claims about model access.</p>
+        </details>
+        <details>
+          <summary>Is this a free GPT Image 2 Generator?</summary>
+          <p>This page provides a free generator-style experience for prompt ideation. It does not promise unlimited free use of external image generation services, and linked tools may have their own access rules.</p>
+        </details>
+        <details>
+          <summary>What can I create with it?</summary>
+          <p>You can explore posters, product images, UI mockups, readable text flyers, magazine covers, portrait concepts, ad creatives, and other AI image generator ideas that benefit from structured prompts.</p>
+        </details>
+        <details>
+          <summary>Can it help with posters and product images?</summary>
+          <p>Yes. The page is especially useful for poster generator prompts, product photo generator prompts, packaging ideas, and ecommerce-style visuals. Describe the subject, text, lighting, surface, layout, and intended use for stronger concepts.</p>
+        </details>
+        <details>
+          <summary>Where can I find GPT Image 2 prompts?</summary>
+          <p>You can visit the GPT Image 2 prompts page for copy-ready prompt examples across text rendering, cinematic scenes, product photography, UI mockups, and portraits.</p>
+        </details>
+      </div>
+    </section>
+
+    <section class="content-section">
+      <div class="section-heading">
+        <p class="eyebrow">Resources</p>
+        <h2>More GPT Image 2 Resources</h2>
+        <p>Continue through the related pages depending on whether you need prompt examples, demo-style visual directions, release discussion, or comparison content.</p>
+      </div>
+      <div class="resource-grid">
+        <a class="resource-card" href="/gpt-image-2-prompts.html">
+          <strong>GPT Image 2 Prompts</strong>
+          <span>Copy ready prompt examples for text rendering, products, UI, portraits, and cinematic scenes.</span>
+        </a>
+        <a class="resource-card" href="/gpt-image-2-demo.html">
+          <strong>GPT Image 2 Demo</strong>
+          <span>See example visual directions and learn what users expect from a demo workflow.</span>
+        </a>
+        <a class="resource-card" href="/gpt-image-2-release-date.html">
+          <strong>GPT Image 2 Release Date</strong>
+          <span>Follow release discussion, availability intent, and practical alternatives while waiting.</span>
+        </a>
+        <a class="resource-card" href="/gpt-image-2-vs-nanobanana.html">
+          <strong>GPT Image 2 Vs Nano Banana</strong>
+          <span>Compare visual strengths across text rendering, UI images, realism, and prompt following.</span>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div>
+      <strong>GPT Image 2 Hub</strong>
+      <p>A lightweight resource hub for GPT Image 2 generator-style workflows, prompt examples, demo intent, release-date questions, and comparisons.</p>
+    </div>
+    <nav aria-label="Footer navigation">
+      <a href="/">Home</a>
+      <a href="/gpt-image-2-prompts.html">Prompts</a>
+      <a href="/gpt-image-2-generator.html">Generator</a>
+      <a href="/gpt-image-2-demo.html">Demo</a>
+    </nav>
+  </footer>
+
+  <script>
+    const navToggle = document.querySelector(".nav-toggle");
+    const siteNav = document.querySelector("#site-nav");
+
+    if (navToggle && siteNav) {
+      navToggle.addEventListener("click", () => {
+        const isOpen = siteNav.classList.toggle("is-open");
+        navToggle.setAttribute("aria-expanded", String(isOpen));
+      });
+
+      siteNav.addEventListener("click", (event) => {
+        if (event.target instanceof HTMLAnchorElement) {
+          siteNav.classList.remove("is-open");
+          navToggle.setAttribute("aria-expanded", "false");
+        }
+      });
+    }
+
+    document.querySelectorAll("[data-select-chip]").forEach((chip) => {
+      chip.addEventListener("click", () => {
+        const row = chip.closest(".option-row");
+
+        if (!row) {
+          return;
+        }
+
+        row.querySelectorAll("[data-select-chip]").forEach((item) => {
+          item.classList.toggle("is-selected", item === chip);
+        });
+      });
+    });
+
+    document.querySelectorAll("[data-count-input]").forEach((input) => {
+      const counter = input.parentElement?.querySelector("[data-count-output]");
+      const maxLength = input.getAttribute("maxlength") || "2000";
+
+      const updateCount = () => {
+        if (counter) {
+          counter.textContent = `${input.value.length} / ${maxLength}`;
+        }
+      };
+
+      input.addEventListener("input", updateCount);
+      updateCount();
+    });
+
+    document.querySelectorAll("[data-prompt-chip]").forEach((chip) => {
+      chip.addEventListener("click", () => {
+        const prompt = chip.getAttribute("data-prompt") || chip.textContent || "";
+        const input = document.querySelector("[data-generator-prompt]");
+
+        if (input instanceof HTMLTextAreaElement) {
+          input.value = prompt.trim();
+          input.dispatchEvent(new Event("input", { bubbles: true }));
+          input.focus();
+        }
+      });
+    });
+
+    document.querySelectorAll("[data-generate-image]").forEach((button) => {
+      button.addEventListener("click", () => {
+        const workbench = button.closest(".generator-workbench");
+        const results = workbench?.querySelector("[data-generator-results]");
+
+        if (!results) {
+          return;
+        }
+
+        button.disabled = true;
+        button.textContent = "Generating...";
+        results.classList.remove("has-result");
+        results.classList.add("is-loading");
+
+        window.setTimeout(() => {
+          results.classList.remove("is-loading");
+          results.classList.add("has-result");
+          button.disabled = false;
+          button.textContent = "Generate Image";
+        }, 1800);
+      });
+    });
+
+    document.querySelectorAll("[data-copy-prompt]").forEach((button) => {
+      button.addEventListener("click", async () => {
+        const card = button.closest(".prompt-example");
+        const prompt = card?.querySelector(".prompt-text")?.textContent?.trim();
+
+        if (!prompt) {
+          return;
+        }
+
+        try {
+          await navigator.clipboard.writeText(prompt);
+        } catch (error) {
+          const fallback = document.createElement("textarea");
+          fallback.value = prompt;
+          fallback.setAttribute("readonly", "");
+          fallback.style.position = "fixed";
+          fallback.style.opacity = "0";
+          document.body.appendChild(fallback);
+          fallback.select();
+          document.execCommand("copy");
+          document.body.removeChild(fallback);
+        }
+
+        const originalText = button.textContent;
+        button.textContent = "Copied";
+        button.classList.add("is-copied");
+
+        window.setTimeout(() => {
+          button.textContent = originalText || "Copy";
+          button.classList.remove("is-copied");
+        }, 1400);
+      });
+    });
+  </script>
+</body>
+</html>
