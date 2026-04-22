@@ -142,3 +142,27 @@ document.querySelectorAll("[data-generate-image]").forEach((button) => {
     }, 1800);
   });
 });
+
+document.querySelectorAll("[data-variant-demo]").forEach((button) => {
+  button.addEventListener("click", () => {
+    const shell = button.closest(".variant-tool-wrap") || document;
+    const status = shell.querySelector("[data-variant-status]");
+    const readyText = button.getAttribute("data-ready-text") || "Preview ready — continue with a fuller workflow on AICovea.";
+
+    button.disabled = true;
+    button.textContent = "Generating...";
+
+    if (status) {
+      status.innerHTML = "<strong>Preparing preview</strong><span>Building a guided image workflow state.</span>";
+    }
+
+    window.setTimeout(() => {
+      button.disabled = false;
+      button.textContent = button.getAttribute("data-default-text") || "Generate Preview";
+
+      if (status) {
+        status.innerHTML = `<strong>Preview ready</strong><span>${readyText}</span><a class="result-cta" href="${externalToolUrl}" target="_blank" rel="noopener">Continue on AICovea</a>`;
+      }
+    }, 1000);
+  });
+});
