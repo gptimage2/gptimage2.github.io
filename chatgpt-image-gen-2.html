@@ -1,0 +1,1120 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ChatGPT Image Gen 2: Try AI Image Generator</title>
+  <meta name="description" content="Explore ChatGPT Image Gen 2 and generate images instantly. Create posters, UI mockups, product visuals, and creative designs with AI prompts online.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://gptimage2.github.io/chatgpt-image-gen-2.html">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="ChatGPT Image Gen 2: Try AI Image Generator">
+  <meta property="og:description" content="Explore ChatGPT Image Gen 2 and generate images instantly. Create posters, UI mockups, product visuals, and creative designs with AI prompts online.">
+  <meta property="og:url" content="https://gptimage2.github.io/chatgpt-image-gen-2.html">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="ChatGPT Image Gen 2: Try AI Image Generator">
+  <meta name="twitter:description" content="Explore ChatGPT Image Gen 2 and generate images instantly. Create posters, UI mockups, product visuals, and creative designs with AI prompts online.">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f7f8fb;
+      --surface: #ffffff;
+      --surface-strong: #f1f5ff;
+      --text: #172033;
+      --muted: #5d6980;
+      --line: #dfe5f1;
+      --blue: #2458ff;
+      --blue-dark: #173bb4;
+      --violet: #7457ff;
+      --green: #0f8f72;
+      --shadow: 0 18px 50px rgba(28, 45, 84, 0.08);
+      --radius: 8px;
+      --max: 1120px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-size: 16px;
+      line-height: 1.65;
+      letter-spacing: 0;
+    }
+
+    a {
+      color: var(--blue);
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: var(--blue-dark);
+    }
+
+    p {
+      margin: 0 0 1rem;
+    }
+
+    h1,
+    h2,
+    h3 {
+      margin: 0;
+      color: var(--text);
+      line-height: 1.12;
+      letter-spacing: 0;
+    }
+
+    h1 {
+      font-size: clamp(3.2rem, 7vw, 6.4rem);
+      max-width: 860px;
+    }
+
+    h2 {
+      font-size: clamp(2rem, 4vw, 3.15rem);
+    }
+
+    h3 {
+      font-size: 1.08rem;
+    }
+
+    .launch-banner {
+      position: relative;
+      z-index: 30;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 0.75rem;
+      min-height: 48px;
+      padding: 0.55rem 5vw;
+      background: #ffd84a;
+      color: #111827;
+      border-bottom: 1px solid rgba(17, 24, 39, 0.12);
+      text-align: center;
+      font-size: 0.98rem;
+      font-weight: 760;
+    }
+
+    .launch-banner-message {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.45rem;
+    }
+
+    .launch-banner-icon {
+      width: 44px;
+      height: 44px;
+      flex: 0 0 auto;
+      object-fit: contain;
+    }
+
+    .launch-banner a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 34px;
+      padding: 0.35rem 0.85rem;
+      border-radius: 8px;
+      color: #fff;
+      background: #111827;
+      font-weight: 820;
+      box-shadow: 0 8px 18px rgba(17, 24, 39, 0.18);
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      width: 100%;
+      min-height: 72px;
+      padding: 0 5vw;
+      background: rgba(255, 255, 255, 0.88);
+      border-bottom: 1px solid rgba(223, 229, 241, 0.78);
+      backdrop-filter: blur(16px);
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.7rem;
+      color: var(--text);
+      font-weight: 760;
+    }
+
+    .brand:hover {
+      color: var(--text);
+    }
+
+    .brand-mark {
+      display: grid;
+      width: 34px;
+      height: 34px;
+      place-items: center;
+      border-radius: 8px;
+      color: #fff;
+      background: linear-gradient(135deg, var(--blue), var(--violet));
+      font-size: 0.82rem;
+    }
+
+    .site-nav {
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+
+    .site-nav a {
+      padding: 0.55rem 0.85rem;
+      border-radius: 8px;
+      color: var(--muted);
+      font-size: 0.95rem;
+      font-weight: 650;
+    }
+
+    .site-nav a:hover,
+    .site-nav a[aria-current="page"] {
+      color: var(--text);
+      background: var(--surface-strong);
+    }
+
+    .nav-toggle {
+      display: none;
+      min-height: 40px;
+      padding: 0 0.9rem;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+      color: var(--text);
+      font: inherit;
+      font-weight: 700;
+    }
+
+    .hero {
+      width: min(1220px, calc(100% - 8vw));
+      margin: 0 auto;
+      padding: 4rem 0 1.25rem;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.05fr) minmax(360px, 0.8fr);
+      gap: 2rem;
+      align-items: end;
+    }
+
+    .eyebrow {
+      margin-bottom: 0.9rem;
+      color: var(--green);
+      font-size: 0.78rem;
+      font-weight: 820;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .hero-copy {
+      max-width: 760px;
+      margin-top: 1.4rem;
+      color: var(--muted);
+      font-size: clamp(1.1rem, 2vw, 1.35rem);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.85rem;
+      margin-top: 2rem;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 0.85rem 1.05rem;
+      border-radius: 8px;
+      font-weight: 780;
+      line-height: 1.2;
+    }
+
+    .button.primary {
+      color: #fff;
+      background: var(--blue);
+      box-shadow: 0 12px 28px rgba(36, 88, 255, 0.24);
+    }
+
+    .button.primary:hover {
+      color: #fff;
+      background: var(--blue-dark);
+    }
+
+    .button.secondary {
+      color: var(--text);
+      background: #fff;
+      border: 1px solid var(--line);
+    }
+
+    .hero-note {
+      margin-top: 1.2rem;
+      color: var(--muted);
+      font-weight: 740;
+    }
+
+    .conversion-note {
+      margin: 0.75rem 0 0;
+      color: var(--muted);
+      font-size: 0.94rem;
+      font-weight: 760;
+    }
+
+    .trend-card,
+    .tool-panel,
+    .preview-panel,
+    .card,
+    .prompt-card,
+    .link-card,
+    .note-box {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+      box-shadow: var(--shadow);
+    }
+
+    .trend-card {
+      display: grid;
+      gap: 0.85rem;
+      min-height: 350px;
+      padding: 1.35rem;
+      align-content: center;
+    }
+
+    .trend-row {
+      display: grid;
+      grid-template-columns: 42px 1fr;
+      gap: 0.75rem;
+      align-items: center;
+      padding: 0.85rem;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fbfcff;
+    }
+
+    .trend-row span {
+      display: grid;
+      width: 34px;
+      height: 34px;
+      place-items: center;
+      border-radius: 8px;
+      color: var(--blue-dark);
+      background: var(--surface-strong);
+      font-weight: 840;
+    }
+
+    .tool-section {
+      width: min(1220px, calc(100% - 8vw));
+      margin: 0 auto;
+      padding: 0.75rem 0 4rem;
+    }
+
+    .tool-shell {
+      display: grid;
+      grid-template-columns: minmax(0, 0.95fr) minmax(360px, 1fr);
+      gap: 1rem;
+      padding: clamp(1rem, 2vw, 1.35rem);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.76);
+      box-shadow: var(--shadow);
+    }
+
+    .tool-panel,
+    .preview-panel {
+      min-height: 440px;
+      padding: clamp(1.2rem, 2vw, 1.5rem);
+    }
+
+    textarea {
+      width: 100%;
+      min-height: 230px;
+      padding: 1rem;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+      color: var(--text);
+      font: inherit;
+      resize: vertical;
+    }
+
+    textarea:focus {
+      outline: 3px solid rgba(36, 88, 255, 0.14);
+      border-color: #9db0ff;
+    }
+
+    .field-label {
+      display: block;
+      margin: 1.2rem 0 0.45rem;
+      color: var(--text);
+      font-size: 1rem;
+      font-weight: 820;
+    }
+
+    .generate-button {
+      min-height: 56px;
+      margin-top: 1rem;
+      padding: 0 1.1rem;
+      border: 0;
+      border-radius: 8px;
+      background: #ffc928;
+      color: #111827;
+      font: inherit;
+      font-weight: 840;
+      cursor: pointer;
+      box-shadow: 0 14px 28px rgba(255, 201, 40, 0.26);
+    }
+
+    .generate-button:disabled {
+      cursor: wait;
+      opacity: 0.72;
+    }
+
+    .preview-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 0.75rem;
+    }
+
+    .preview-tile {
+      display: grid;
+      align-content: end;
+      min-height: 190px;
+      padding: 0.9rem;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background:
+        linear-gradient(145deg, rgba(36, 88, 255, 0.1), rgba(15, 143, 114, 0.12)),
+        #fbfcff;
+    }
+
+    .preview-tile:nth-child(2) {
+      background:
+        linear-gradient(145deg, rgba(255, 201, 40, 0.18), rgba(36, 88, 255, 0.08)),
+        #fff;
+    }
+
+    .preview-tile:nth-child(3) {
+      background:
+        linear-gradient(145deg, rgba(15, 143, 114, 0.13), rgba(116, 87, 255, 0.09)),
+        #fff;
+    }
+
+    .preview-tile span {
+      width: 70%;
+      height: 10px;
+      margin-bottom: 0.55rem;
+      border-radius: 999px;
+      background: rgba(23, 32, 51, 0.13);
+    }
+
+    .preview-tile strong {
+      color: rgba(23, 32, 51, 0.62);
+      font-size: 0.86rem;
+    }
+
+    .status {
+      display: grid;
+      gap: 0.45rem;
+      margin-top: 1rem;
+      padding: 1rem;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #f7fbff;
+      color: var(--muted);
+    }
+
+    .status strong {
+      color: var(--text);
+    }
+
+    .workflow-cta {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 1.25rem;
+      align-items: center;
+      padding: clamp(1.25rem, 3vw, 2rem);
+      border: 1px solid #b9c7ec;
+      border-radius: 8px;
+      background:
+        linear-gradient(135deg, rgba(36, 88, 255, 0.1), rgba(15, 143, 114, 0.1)),
+        #fff;
+      box-shadow: var(--shadow);
+    }
+
+    .workflow-cta p {
+      max-width: 760px;
+      color: var(--muted);
+    }
+
+    .result-cta {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: fit-content;
+      min-height: 40px;
+      margin-top: 0.35rem;
+      padding: 0 0.85rem;
+      border-radius: 8px;
+      color: #fff;
+      background: var(--blue);
+      font-weight: 780;
+    }
+
+    .result-cta:hover {
+      color: #fff;
+      background: var(--blue-dark);
+    }
+
+    .content-section {
+      width: min(var(--max), calc(100% - 10vw));
+      margin: 0 auto;
+      padding: 4rem 0;
+      border-top: 1px solid rgba(223, 229, 241, 0.8);
+    }
+
+    .section-heading {
+      max-width: 780px;
+      margin-bottom: 1.75rem;
+    }
+
+    .wide-copy,
+    .card p,
+    .prompt-card p,
+    .link-card span,
+    .note-box p,
+    .faq-list p {
+      color: var(--muted);
+    }
+
+    .card-grid,
+    .prompt-grid,
+    .link-grid {
+      display: grid;
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+
+    .card-grid {
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+    }
+
+    .prompt-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .link-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .card,
+    .prompt-card,
+    .link-card,
+    .note-box {
+      padding: 1.2rem;
+    }
+
+    .prompt-card {
+      display: grid;
+      gap: 0.9rem;
+      min-height: 330px;
+    }
+
+    .prompt-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 0.75rem;
+      align-items: start;
+    }
+
+    .tag {
+      flex: 0 0 auto;
+      min-height: 28px;
+      padding: 0.25rem 0.55rem;
+      border-radius: 999px;
+      color: var(--blue-dark);
+      background: var(--surface-strong);
+      font-size: 0.78rem;
+      font-weight: 820;
+      line-height: 1.4;
+    }
+
+    .copy-button {
+      align-self: end;
+      justify-self: start;
+      min-height: 40px;
+      padding: 0 0.85rem;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+      color: var(--text);
+      font: inherit;
+      font-size: 0.9rem;
+      font-weight: 780;
+      cursor: pointer;
+    }
+
+    .copy-button:hover,
+    .copy-button.is-copied {
+      color: #fff;
+      border-color: var(--blue);
+      background: var(--blue);
+    }
+
+    .link-card {
+      display: grid;
+      gap: 0.55rem;
+      min-height: 160px;
+      color: var(--text);
+    }
+
+    .link-card:hover {
+      color: var(--text);
+      border-color: #b9c7ec;
+      transform: translateY(-2px);
+    }
+
+    .trend-explain {
+      display: grid;
+      grid-template-columns: minmax(0, 0.9fr) minmax(300px, 0.5fr);
+      gap: 1rem;
+      align-items: stretch;
+    }
+
+    .faq-list {
+      display: grid;
+      gap: 0.85rem;
+    }
+
+    details {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: #fff;
+      box-shadow: var(--shadow);
+    }
+
+    summary {
+      cursor: pointer;
+      min-height: 58px;
+      padding: 1rem 1.15rem;
+      color: var(--text);
+      font-weight: 780;
+    }
+
+    details p {
+      padding: 0 1.15rem 1.1rem;
+    }
+
+    .site-footer {
+      display: flex;
+      justify-content: space-between;
+      gap: 2rem;
+      width: min(var(--max), calc(100% - 10vw));
+      margin: 0 auto;
+      padding: 3rem 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .site-footer div {
+      max-width: 620px;
+    }
+
+    .site-footer p {
+      color: var(--muted);
+    }
+
+    .site-footer nav {
+      display: flex;
+      flex-wrap: wrap;
+      align-content: start;
+      gap: 0.8rem;
+    }
+
+    .site-footer a {
+      color: var(--muted);
+      font-weight: 700;
+    }
+
+    .site-footer a:hover {
+      color: var(--blue-dark);
+    }
+
+    @media (max-width: 1760px) {
+      .nav-toggle {
+        display: inline-flex;
+        align-items: center;
+      }
+
+      .site-nav {
+        position: absolute;
+        top: 72px;
+        right: 5vw;
+        left: 5vw;
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        padding: 0.75rem;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: #fff;
+        box-shadow: var(--shadow);
+      }
+
+      .site-nav.is-open {
+        display: flex;
+      }
+
+      .site-nav a {
+        padding: 0.8rem;
+      }
+    }
+
+    @media (max-width: 920px) {
+      .hero-grid,
+      .tool-shell,
+      .trend-explain,
+      .workflow-cta,
+      .card-grid,
+      .prompt-grid,
+      .link-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .preview-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .site-footer {
+        flex-direction: column;
+      }
+    }
+
+    @media (max-width: 540px) {
+      body {
+        font-size: 15px;
+      }
+
+      .site-header {
+        width: 100%;
+        min-height: 64px;
+        padding: 0 1rem;
+      }
+
+      .site-nav {
+        top: 64px;
+        right: 1rem;
+        left: 1rem;
+      }
+
+      .hero,
+      .tool-section,
+      .content-section,
+      .site-footer {
+        width: min(100% - 2rem, var(--max));
+      }
+
+      .hero {
+        padding-top: 4rem;
+      }
+
+      .hero-actions,
+      .button {
+        width: 100%;
+      }
+
+      .preview-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is ChatGPT Image Gen 2?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "ChatGPT Image Gen 2 is used here as a search-friendly way to describe prompt-based GPT Image 2 style image generation workflows for posters, product visuals, UI mockups, ads, and creative images."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is it the same as GPT Image 2?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Many searchers use ChatGPT Image Gen 2, GPT Image Gen 2, and image gen 2 to describe similar GPT Image 2 image generation workflows, but official naming should be checked through official product channels."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How to use it?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Start with a clear prompt that includes subject, style, layout, lighting, text requirements, and intended use, then refine the result with more specific instructions."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is it free?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Free access depends on the tool or provider. This page provides independent exploration, prompt examples, and links to related workflow pages."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What can it generate?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "It can be used for poster concepts, product images, UI mockups, social content, ads, portraits, typography visuals, and other AI image generator workflows."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Where to try it?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "You can explore related online, generator, and prompt library pages on this site."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <div class="launch-banner" role="region" aria-label="GPT Image 2 launch announcement">
+    <span class="launch-banner-message"><img class="launch-banner-icon" src="/icon.png" alt="" aria-hidden="true">GPT Image 2 image generation and editing are now live.</span>
+    <a href="https://www.aicovea.com/gpt-image-2" target="_blank" rel="noopener">Try it now</a>
+  </div>
+  <header class="site-header">
+    <a class="brand" href="/" aria-label="GPT Image 2 Hub home">
+      <span class="brand-mark">G2</span>
+      <span>GPT Image 2 Hub</span>
+    </a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+    <nav class="site-nav" id="site-nav" aria-label="Primary navigation">
+      <a href="/">Home</a>
+      <a href="/gpt-image-2-online.html">Online</a>
+      <a href="/gpt-image-2-free.html">Free</a>
+      <a href="/gpt-image-2-prompts.html">Prompts</a>
+      <a href="/gpt-image-2-generator.html">Generator</a>
+      <a href="/gpt-image-2-api.html">API</a>
+      <a href="/how-to-use-gpt-image-2.html">Guide</a>
+      <a href="/how-to-try-gpt-image-2.html">Try</a>
+      <a href="/chatgpt-image-gen-2.html" aria-current="page">Gen 2</a>
+      <a href="/gpt-images-2-0.html">Images 2.0</a>
+      <a href="/chatgpt-images-2-0.html">ChatGPT 2.0</a>
+      <a href="/openai-image-2.html">OpenAI 2</a>
+      <a href="/got-image-2.html">Got</a>
+      <a href="/gpt-image-2-demo.html">Demo</a>
+      <a href="/gpt-image-2-release-date.html">Release Date</a>
+      <a href="/gpt-image-2-vs-nanobanana.html">Vs Nano Banana</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-grid">
+        <div>
+          <p class="eyebrow">TRENDING MODEL</p>
+          <h1>ChatGPT Image Gen 2</h1>
+          <p class="hero-copy">Generate high-quality images instantly using ChatGPT Image Gen 2 workflows and prompt-based tools.</p>
+          <p class="hero-copy">Create posters, product visuals, UI mockups, and creative images using ChatGPT Image Gen 2.</p>
+          <div class="hero-actions">
+            <a class="button primary" href="https://www.aicovea.com/gpt-image-2" target="_blank" rel="noopener">Start Creating</a>
+            <a class="button secondary" href="#prompt-examples" data-scroll-prompts>Try Examples</a>
+          </div>
+          <p class="conversion-note">No login required. Start with a faster GPT Image 2 workflow online.</p>
+          <p class="hero-note">One of the fastest growing AI image generation trends right now.</p>
+        </div>
+        <aside class="trend-card" aria-label="Trending search signals">
+          <div class="trend-row"><span>01</span><strong>ChatGPT Image Gen 2 search intent</strong></div>
+          <div class="trend-row"><span>02</span><strong>Prompt-based AI image generator workflows</strong></div>
+          <div class="trend-row"><span>03</span><strong>Posters, UI mockups, products, and ads</strong></div>
+          <div class="trend-row"><span>04</span><strong>Fast path into GPT Image Gen 2 tools</strong></div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="tool-section" id="image-tool" aria-label="Image generator demo">
+      <div class="tool-shell">
+        <section class="tool-panel">
+          <p class="eyebrow">Generator demo</p>
+          <h2>AI Image Generator</h2>
+          <label class="field-label" for="image-prompt">Prompt idea</label>
+          <textarea id="image-prompt" placeholder="Describe an image idea (poster, product shot, UI mockup...)"></textarea>
+          <button class="generate-button" type="button" data-generate-demo>Generate Image</button>
+        </section>
+        <aside class="preview-panel">
+          <p class="eyebrow">Preview</p>
+          <h2>Preview</h2>
+          <div class="preview-grid">
+            <div class="preview-tile"><span></span><strong>Poster</strong></div>
+            <div class="preview-tile"><span></span><strong>Product shot</strong></div>
+            <div class="preview-tile"><span></span><strong>UI mockup</strong></div>
+          </div>
+          <div class="status" data-demo-status aria-live="polite">
+            <strong>Ready for a prompt</strong>
+            <span>Use this fake generator to explore the flow before trying full examples.</span>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="content-section">
+      <div class="section-heading">
+        <p class="eyebrow">Definition</p>
+        <h2>What is ChatGPT Image Gen 2</h2>
+      </div>
+      <p class="wide-copy">ChatGPT Image Gen 2 is a common search phrase people use when they want the next generation of ChatGPT images, GPT Image Gen 2 workflows, or an image gen 2 experience that turns prompts into visual results. On this page, the phrase points to prompt-based GPT Image 2 style image generation: you describe a subject, choose a visual direction, add layout or text requirements, and refine the result until it fits your use case.</p>
+      <p class="wide-copy">The most common use cases are posters, product images, UI mockups, social content, creative ads, portraits, and text-heavy visual concepts. This page is designed as a trend traffic landing page, a tool entry point, and a prompt collection for users who want a fast AI image generator workflow without starting from a blank prompt.</p>
+    </section>
+
+    <section class="content-section">
+      <div class="section-heading">
+        <p class="eyebrow">Create</p>
+        <h2>What You Can Create</h2>
+      </div>
+      <div class="card-grid">
+        <article class="card"><h3>Posters</h3><p>Create event posters, campaign launch visuals, covers, and bold typography-driven concepts.</p></article>
+        <article class="card"><h3>Ads</h3><p>Explore social ads, paid creative directions, landing page visuals, and quick hook variations.</p></article>
+        <article class="card"><h3>Product images</h3><p>Generate packaging shots, ecommerce scenes, lifestyle compositions, and product storytelling concepts.</p></article>
+        <article class="card"><h3>UI mockups</h3><p>Draft dashboards, mobile app screens, SaaS hero previews, and interface concepts with readable labels.</p></article>
+        <article class="card"><h3>Social content</h3><p>Build thumbnails, story graphics, carousel concepts, and fast visual ideas for content calendars.</p></article>
+      </div>
+    </section>
+
+    <section class="content-section" id="prompt-examples">
+      <div class="section-heading">
+        <p class="eyebrow">Copy and try</p>
+        <h2>Best Prompt Examples</h2>
+        <p>These prompt examples are written for ChatGPT Image Gen 2 and related GPT Image Gen 2 workflows. Copy one, adjust the subject, and test the result direction.</p>
+      </div>
+      <div class="prompt-grid">
+        <article class="prompt-card">
+          <div class="prompt-top"><h3>Poster Prompt</h3><span class="tag">Poster</span></div>
+          <p class="prompt-body">Create a cinematic launch poster for an AI design conference. Use the exact headline "CREATE THE NEXT IMAGE", bold readable typography, a luminous stage background, a centered abstract display, clean margins, and a premium technology campaign style.</p>
+          <button class="copy-button" type="button" data-copy-prompt>Copy</button>
+        </article>
+        <article class="prompt-card">
+          <div class="prompt-top"><h3>Product Prompt</h3><span class="tag">Product</span></div>
+          <p class="prompt-body">Create a premium product image of a matte ceramic coffee tumbler on a walnut desk. Use soft morning window light, realistic steam, subtle shadows, clean ecommerce composition, and enough negative space for a short web headline.</p>
+          <button class="copy-button" type="button" data-copy-prompt>Copy</button>
+        </article>
+        <article class="prompt-card">
+          <div class="prompt-top"><h3>UI Prompt</h3><span class="tag">UI</span></div>
+          <p class="prompt-body">Generate a polished mobile app dashboard for a travel planner. Include trip cards, a map preview, itinerary timeline, bottom navigation, readable labels, calm blue accents, and realistic app store screenshot styling.</p>
+          <button class="copy-button" type="button" data-copy-prompt>Copy</button>
+        </article>
+        <article class="prompt-card">
+          <div class="prompt-top"><h3>Typography Prompt</h3><span class="tag">Text</span></div>
+          <p class="prompt-body">Design a clean typography poster with the exact title "IMAGE GEN 2" and subtitle "Prompt, Create, Refine". Use crisp alignment, high contrast, editorial grid structure, generous spacing, and no extra random words.</p>
+          <button class="copy-button" type="button" data-copy-prompt>Copy</button>
+        </article>
+        <article class="prompt-card">
+          <div class="prompt-top"><h3>Ad Prompt</h3><span class="tag">Ad</span></div>
+          <p class="prompt-body">Create a social ad for a productivity app. Show a clean laptop screen with a task dashboard, the exact headline "Plan Less, Ship More", bright studio lighting, clear CTA space, and a refined SaaS marketing look.</p>
+          <button class="copy-button" type="button" data-copy-prompt>Copy</button>
+        </article>
+        <article class="prompt-card">
+          <div class="prompt-top"><h3>Portrait Prompt</h3><span class="tag">Portrait</span></div>
+          <p class="prompt-body">Create an editorial portrait of a founder in a modern studio. Use natural side light, realistic skin texture, a confident relaxed expression, neutral background, shallow depth of field, and a professional magazine interview style.</p>
+          <button class="copy-button" type="button" data-copy-prompt>Copy</button>
+        </article>
+      </div>
+    </section>
+
+    <section class="content-section">
+      <div class="workflow-cta">
+        <div>
+          <p class="eyebrow">Real workflow</p>
+          <h2>Use GPT Image 2 in a Real Workflow</h2>
+          <p>Move from examples and guides to a faster GPT Image 2 workflow for posters, product visuals, UI mockups, and text-based images.</p>
+        </div>
+        <a class="button primary" href="https://www.aicovea.com/gpt-image-2" target="_blank" rel="noopener">Open GPT Image 2 on AICovea</a>
+      </div>
+    </section>
+
+    <section class="content-section">
+      <div class="section-heading">
+        <p class="eyebrow">Try online</p>
+        <h2>Try ChatGPT Image Gen 2 Online</h2>
+      </div>
+      <div class="link-grid">
+        <a class="link-card" href="https://www.aicovea.com/gpt-image-2" target="_blank" rel="noopener"><strong>GPT Image 2 on AICovea</strong><span>Use a more complete GPT Image 2 workflow with prompts, generation, and guided exploration.</span></a>
+        <a class="link-card" href="/gpt-image-2-generator.html"><strong>GPT Image 2 Generator</strong><span>Use a generator-style interface for posters, products, UI, and ads.</span></a>
+      </div>
+    </section>
+
+    <section class="content-section">
+      <div class="trend-explain">
+        <div>
+          <p class="eyebrow">Trend intent</p>
+          <h2>Why ChatGPT Image Gen 2 is Trending</h2>
+          <p>ChatGPT Image Gen 2 is trending because users are watching for a new model, better prompt following, stronger text rendering, and higher visual quality. The phrase also captures users who type ChatGPT images, GPT Image Gen 2, image gen 2, or AI image generator when they want a fast path from idea to image.</p>
+          <p>Searchers care about practical output. They want posters that look designed, product visuals that feel useful for ecommerce, UI mockups with readable interface labels, and ads that can be compared quickly. That is why this page pairs a tool-like hero with prompt examples and links to deeper GPT Image 2 resources.</p>
+        </div>
+        <div class="note-box">
+          <h3>What users test first</h3>
+          <p>Prompt following, text clarity, visual realism, design polish, and whether the workflow can move from rough idea to usable creative direction quickly.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section">
+      <div class="section-heading">
+        <p class="eyebrow">More tools</p>
+        <h2>Explore More GPT Image 2 Tools</h2>
+      </div>
+      <div class="link-grid">
+        <a class="link-card" href="https://www.aicovea.com/gpt-image-2" target="_blank" rel="noopener"><strong>GPT Image 2 on AICovea</strong><span>Use a more complete GPT Image 2 workflow with prompts, generation, and guided exploration.</span></a>
+        <a class="link-card" href="/gpt-image-2-api.html"><strong>GPT Image 2 API</strong><span>Explore API examples, docs intent, and pricing considerations.</span></a>
+        <a class="link-card" href="/gpt-image-2-prompts.html"><strong>GPT Image 2 Prompts</strong><span>Browse copy-ready prompts for posters, products, UI, and more.</span></a>
+      </div>
+    </section>
+
+    <section class="content-section">
+      <div class="section-heading">
+        <p class="eyebrow">FAQ</p>
+        <h2>Frequently Asked Questions</h2>
+      </div>
+      <div class="faq-list">
+        <details><summary>What is ChatGPT Image Gen 2?</summary><p>ChatGPT Image Gen 2 is used here as a search-friendly phrase for prompt-based GPT Image 2 style image generation workflows, including posters, products, UI mockups, ads, and creative visuals.</p></details>
+        <details><summary>Is it the same as GPT Image 2?</summary><p>Many users use ChatGPT Image Gen 2, GPT Image Gen 2, and image gen 2 to describe similar image generation intent. Official naming and access details should be checked through official product channels.</p></details>
+        <details><summary>How to use it?</summary><p>Start with a clear subject, add style and mood, describe layout and lighting, include exact text instructions when needed, and refine after the first preview.</p></details>
+        <details><summary>Is it free?</summary><p>Free access depends on the actual service or provider. This page provides independent prompt examples and links to related exploration pages.</p></details>
+        <details><summary>What can it generate?</summary><p>Common outputs include posters, product visuals, UI mockups, social content, ads, portraits, typography visuals, and other creative image concepts.</p></details>
+        <details><summary>Where to try it?</summary><p>Use the online, generator, and prompt pages linked above to explore ChatGPT images and GPT Image 2 style workflows.</p></details>
+      </div>
+    </section>
+
+    <section class="content-section">
+      <div class="note-box">
+        <h2>Disclaimer</h2>
+        <p>This is an independent exploration page and not an official ChatGPT product page.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div>
+      <strong>GPT Image 2 Hub</strong>
+      <p>A lightweight resource hub for ChatGPT Image Gen 2 trends, GPT Image 2 workflows, prompt exploration, API examples, and generator-style tools.</p>
+    </div>
+    <nav aria-label="Footer navigation">
+      <a href="/">Home</a>
+      <a href="/gpt-image-2-online.html">Online</a>
+      <a href="/gpt-image-2-free.html">Free</a>
+      <a href="/gpt-image-2-prompts.html">Prompts</a>
+      <a href="/gpt-image-2-api.html">API</a>
+      <a href="/how-to-use-gpt-image-2.html">Guide</a>
+      <a href="/how-to-try-gpt-image-2.html">Try</a>
+      <a href="/chatgpt-image-gen-2.html">Gen 2</a>
+    </nav>
+  </footer>
+
+  <script>
+    const navToggle = document.querySelector(".nav-toggle");
+    const siteNav = document.querySelector("#site-nav");
+
+    if (navToggle && siteNav) {
+      navToggle.addEventListener("click", () => {
+        const isOpen = siteNav.classList.toggle("is-open");
+        navToggle.setAttribute("aria-expanded", String(isOpen));
+      });
+
+      siteNav.addEventListener("click", (event) => {
+        if (event.target instanceof HTMLAnchorElement) {
+          siteNav.classList.remove("is-open");
+          navToggle.setAttribute("aria-expanded", "false");
+        }
+      });
+    }
+
+    document.querySelectorAll("[data-scroll-tool], [data-scroll-prompts]").forEach((button) => {
+      button.addEventListener("click", (event) => {
+        const target = document.querySelector(button.getAttribute("href"));
+        if (!target) return;
+        event.preventDefault();
+        target.scrollIntoView({ behavior: "smooth", block: "start" });
+      });
+    });
+
+    document.querySelectorAll("[data-generate-demo]").forEach((button) => {
+      button.addEventListener("click", () => {
+        const status = document.querySelector("[data-demo-status]");
+        button.disabled = true;
+        button.textContent = "Generating...";
+        if (status) {
+          status.innerHTML = "<strong>Preparing preview</strong><span>Building a sample image generation state.</span>";
+        }
+        window.setTimeout(() => {
+          button.disabled = false;
+          button.textContent = "Generate Image";
+          if (status) {
+            status.innerHTML = "<strong>Preview ready</strong><span>Continue with a fuller GPT Image 2 workflow on AICovea.</span><a class=\"result-cta\" href=\"https://www.aicovea.com/gpt-image-2\" target=\"_blank\" rel=\"noopener\">Continue on AICovea</a>";
+          }
+        }, 1100);
+      });
+    });
+
+    document.querySelectorAll("[data-copy-prompt]").forEach((button) => {
+      button.addEventListener("click", async () => {
+        const card = button.closest(".prompt-card");
+        const prompt = card?.querySelector(".prompt-body")?.textContent?.trim();
+        if (!prompt) return;
+
+        try {
+          await navigator.clipboard.writeText(prompt);
+        } catch (error) {
+          const fallback = document.createElement("textarea");
+          fallback.value = prompt;
+          fallback.setAttribute("readonly", "");
+          fallback.style.position = "fixed";
+          fallback.style.opacity = "0";
+          document.body.appendChild(fallback);
+          fallback.select();
+          document.execCommand("copy");
+          document.body.removeChild(fallback);
+        }
+
+        const originalText = button.textContent;
+        button.textContent = "Copied";
+        button.classList.add("is-copied");
+        window.setTimeout(() => {
+          button.textContent = originalText || "Copy";
+          button.classList.remove("is-copied");
+        }, 1400);
+      });
+    });
+
+    document.querySelectorAll("details").forEach((detail) => {
+      detail.addEventListener("toggle", () => {
+        detail.dataset.state = detail.open ? "open" : "closed";
+      });
+    });
+  </script>
+</body>
+</html>

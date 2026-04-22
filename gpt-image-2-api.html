@@ -1,0 +1,916 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GPT Image 2 API: Docs, Pricing &amp; Examples</title>
+  <meta name="description" content="Explore GPT Image 2 API with docs, pricing, examples, and use cases. Learn how image generation works and try prompt-based image creation in online demos.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://gptimage2.github.io/gpt-image-2-api.html">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="GPT Image 2 API: Docs, Pricing &amp; Examples">
+  <meta property="og:description" content="Explore GPT Image 2 API with docs, pricing, examples, and use cases. Learn how image generation works and try prompt-based image creation in online demos.">
+  <meta property="og:url" content="https://gptimage2.github.io/gpt-image-2-api.html">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="GPT Image 2 API: Docs, Pricing &amp; Examples">
+  <meta name="twitter:description" content="Explore GPT Image 2 API with docs, pricing, examples, and use cases. Learn how image generation works and try prompt-based image creation in online demos.">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <!-- Privacy-friendly analytics by Plausible -->
+  <script async src="https://plausible.io/js/pa-SaOy0buOcCvezaGy0UbzM.js"></script>
+  <script>
+    window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+    plausible.init()
+  </script>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .api-hero {
+      width: min(1180px, calc(100% - 10vw));
+      margin: 0 auto;
+      padding: 4rem 0 1.25rem;
+    }
+
+    .api-hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.04fr) minmax(360px, 0.72fr);
+      gap: 2rem;
+      align-items: end;
+    }
+
+    .api-hero h1 {
+      max-width: 780px;
+      font-size: clamp(3rem, 6.2vw, 5.65rem);
+    }
+
+    .api-hero .hero-copy {
+      max-width: 760px;
+    }
+
+    .api-hero-note {
+      margin: 1.5rem 0 0;
+      color: var(--muted);
+      font-weight: 700;
+    }
+
+    .api-hero-card {
+      min-height: 360px;
+      padding: 1.25rem;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+      box-shadow: var(--shadow);
+    }
+
+    .api-status-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .api-pill {
+      display: inline-flex;
+      align-items: center;
+      min-height: 34px;
+      padding: 0 0.7rem;
+      border-radius: 999px;
+      color: var(--blue-dark);
+      background: var(--surface-strong);
+      font-size: 0.78rem;
+      font-weight: 820;
+    }
+
+    .endpoint-box {
+      display: grid;
+      gap: 0.85rem;
+      padding: 1rem;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #f9fbff;
+    }
+
+    .endpoint-line {
+      display: grid;
+      grid-template-columns: 72px 1fr;
+      gap: 0.75rem;
+      align-items: center;
+      min-height: 42px;
+      padding-bottom: 0.7rem;
+      border-bottom: 1px solid var(--line);
+      font-size: 0.92rem;
+    }
+
+    .endpoint-line:last-child {
+      padding-bottom: 0;
+      border-bottom: 0;
+    }
+
+    .endpoint-line span {
+      color: var(--muted);
+      font-weight: 820;
+    }
+
+    .endpoint-line code {
+      overflow-wrap: anywhere;
+      color: var(--text);
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+      font-weight: 760;
+    }
+
+    .api-demo-section {
+      width: min(1180px, calc(100% - 10vw));
+      margin: 0 auto;
+      padding: 0.75rem 0 4rem;
+    }
+
+    .api-demo-shell {
+      display: grid;
+      grid-template-columns: minmax(0, 0.94fr) minmax(360px, 1fr);
+      gap: 1rem;
+      padding: clamp(1rem, 2vw, 1.35rem);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.78);
+      box-shadow: var(--shadow);
+    }
+
+    .api-demo-panel,
+    .api-preview-panel {
+      min-height: 470px;
+      padding: clamp(1.2rem, 2.2vw, 1.55rem);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+    }
+
+    .api-demo-panel h2,
+    .api-preview-panel h2 {
+      margin-bottom: 1rem;
+      font-size: clamp(1.6rem, 2.5vw, 2.2rem);
+    }
+
+    .api-request-input {
+      width: 100%;
+      min-height: 230px;
+      padding: 1rem;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #111827;
+      color: #e5eefc;
+      font: 0.95rem/1.6 ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+      resize: vertical;
+    }
+
+    .api-request-input:focus {
+      outline: 3px solid rgba(36, 88, 255, 0.18);
+      border-color: #9db0ff;
+    }
+
+    .api-run-button {
+      min-height: 56px;
+      margin-top: 1rem;
+      padding: 0 1.1rem;
+      border: 0;
+      border-radius: 8px;
+      background: #ffc928;
+      color: #111827;
+      font: inherit;
+      font-weight: 840;
+      cursor: pointer;
+      box-shadow: 0 14px 28px rgba(255, 201, 40, 0.26);
+    }
+
+    .api-run-button:hover {
+      background: #f5bc13;
+    }
+
+    .api-run-button:disabled {
+      cursor: wait;
+      opacity: 0.72;
+    }
+
+    .api-preview-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 0.75rem;
+    }
+
+    .api-preview-tile {
+      display: grid;
+      align-content: end;
+      min-height: 185px;
+      padding: 0.9rem;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background:
+        linear-gradient(145deg, rgba(36, 88, 255, 0.1), rgba(15, 143, 114, 0.13)),
+        #fbfcff;
+    }
+
+    .api-preview-tile:nth-child(2) {
+      background:
+        linear-gradient(145deg, rgba(255, 201, 40, 0.18), rgba(36, 88, 255, 0.08)),
+        #fff;
+    }
+
+    .api-preview-tile:nth-child(3) {
+      background:
+        linear-gradient(145deg, rgba(15, 143, 114, 0.13), rgba(116, 87, 255, 0.09)),
+        #fff;
+    }
+
+    .api-preview-tile span {
+      width: 66%;
+      height: 10px;
+      margin-bottom: 0.55rem;
+      border-radius: 999px;
+      background: rgba(23, 32, 51, 0.13);
+    }
+
+    .api-preview-tile strong {
+      color: rgba(23, 32, 51, 0.62);
+      font-size: 0.86rem;
+    }
+
+    .api-demo-result {
+      display: grid;
+      gap: 0.5rem;
+      margin-top: 1rem;
+      padding: 1rem;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #f7fbff;
+      color: var(--muted);
+    }
+
+    .api-demo-result strong {
+      color: var(--text);
+    }
+
+    .conversion-note {
+      margin: 0.75rem 0 0;
+      color: var(--muted);
+      font-size: 0.94rem;
+      font-weight: 760;
+    }
+
+    .workflow-cta {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 1.25rem;
+      align-items: center;
+      padding: clamp(1.25rem, 3vw, 2rem);
+      border: 1px solid #b9c7ec;
+      border-radius: 8px;
+      background:
+        linear-gradient(135deg, rgba(36, 88, 255, 0.1), rgba(15, 143, 114, 0.1)),
+        #fff;
+      box-shadow: var(--shadow);
+    }
+
+    .workflow-cta p {
+      max-width: 760px;
+      color: var(--muted);
+    }
+
+    .result-cta {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: fit-content;
+      min-height: 40px;
+      margin-top: 0.35rem;
+      padding: 0 0.85rem;
+      border-radius: 8px;
+      color: #fff;
+      background: var(--blue);
+      font-weight: 780;
+    }
+
+    .result-cta:hover {
+      color: #fff;
+      background: var(--blue-dark);
+    }
+
+    .api-demo-result.is-loading strong::after {
+      content: "";
+      display: inline-block;
+      width: 1.4em;
+      text-align: left;
+      animation: apiDots 1s steps(4, end) infinite;
+    }
+
+    @keyframes apiDots {
+      0% { content: ""; }
+      25% { content: "."; }
+      50% { content: ".."; }
+      75% { content: "..."; }
+      100% { content: ""; }
+    }
+
+    .code-example-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+
+    .code-card,
+    .prompt-api-card {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .code-card h3,
+    .prompt-api-card h3 {
+      padding: 1rem 1rem 0;
+    }
+
+    .code-card p,
+    .prompt-api-card p {
+      padding: 0 1rem;
+      color: var(--muted);
+    }
+
+    .code-block {
+      margin: 1rem 0 0;
+      padding: 1rem;
+      overflow-x: auto;
+      background: #111827;
+      color: #e5eefc;
+      font: 0.9rem/1.65 ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+    }
+
+    .prompt-api-card {
+      margin-top: 1rem;
+      padding-bottom: 1rem;
+    }
+
+    .prompt-list {
+      display: grid;
+      gap: 0.75rem;
+      margin: 1rem;
+    }
+
+    .prompt-list article {
+      padding: 1rem;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fbfcff;
+    }
+
+    .prompt-list strong {
+      display: block;
+      margin-bottom: 0.35rem;
+    }
+
+    .prompt-list p {
+      margin: 0;
+      padding: 0;
+      color: var(--muted);
+    }
+
+    .pricing-list {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+
+    .build-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+
+    .intent-panel {
+      display: grid;
+      grid-template-columns: minmax(0, 0.78fr) minmax(300px, 0.5fr);
+      gap: 1rem;
+      align-items: stretch;
+    }
+
+    .intent-list {
+      display: grid;
+      gap: 0.75rem;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .intent-list li {
+      padding: 1rem;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+      color: var(--muted);
+    }
+
+    .cta-link-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+
+    .cta-link-card {
+      display: grid;
+      gap: 0.55rem;
+      min-height: 170px;
+      padding: 1.25rem;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+      color: var(--text);
+      box-shadow: var(--shadow);
+    }
+
+    .cta-link-card:hover {
+      color: var(--text);
+      border-color: #b9c7ec;
+      transform: translateY(-2px);
+    }
+
+    .cta-link-card span {
+      color: var(--muted);
+    }
+
+    .api-disclaimer {
+      margin-top: 1.5rem;
+    }
+
+    @media (max-width: 920px) {
+      .api-hero-grid,
+      .api-demo-shell,
+      .code-example-grid,
+      .pricing-list,
+      .build-grid,
+      .intent-panel,
+      .workflow-cta,
+      .cta-link-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .api-preview-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 540px) {
+      .api-hero,
+      .api-demo-section {
+        width: min(100% - 2rem, 1180px);
+      }
+
+      .api-hero {
+        padding-top: 4rem;
+      }
+
+      .api-preview-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .endpoint-line {
+        grid-template-columns: 1fr;
+        gap: 0.25rem;
+      }
+    }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is GPT Image 2 API?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "GPT Image 2 API is described here as an image generation API workflow where a developer sends a prompt, model name, and generation settings to create visual concepts such as posters, product visuals, UI mockups, ads, and marketing assets."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is GPT Image 2 API publicly available?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "This independent page does not confirm official availability. Public access, model names, and implementation requirements should always be checked through official provider documentation before building production workflows."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I use GPT Image 2 API?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A typical workflow sends a prompt, a model identifier, and optional output settings to an image generation API, then stores or displays the generated result in an application."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does GPT Image 2 API have pricing?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Pricing should not be assumed from this page. Image generation pricing often depends on image size, quality settings, output count, and generation volume."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What can I build with an image generation API?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "You can build poster generators, product image tools, UI mockup workflows, creative ad builders, social media asset generators, and marketing visual pipelines."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Where can I try GPT Image 2 online?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "You can explore related prompt-based workflows on this site through the online, generator, and prompts pages."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body class="api-page">
+  <div class="launch-banner" role="region" aria-label="GPT Image 2 launch announcement">
+    <span class="launch-banner-message"><img class="launch-banner-icon" src="/icon.png" alt="" aria-hidden="true">GPT Image 2 image generation and editing are now live.</span>
+    <a href="https://www.aicovea.com/gpt-image-2" target="_blank" rel="noopener">Try it now</a>
+  </div>
+  <header class="site-header">
+    <a class="brand" href="/" aria-label="GPT Image 2 Hub home">
+      <span class="brand-mark">G2</span>
+      <span>GPT Image 2 Hub</span>
+    </a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+    <nav class="site-nav" id="site-nav" aria-label="Primary navigation">
+      <a href="/">Home</a>
+      <a href="/gpt-image-2-online.html">Online</a>
+      <a href="/gpt-image-2-free.html">Free</a>
+      <a href="/gpt-image-2-prompts.html">Prompts</a>
+      <a href="/gpt-image-2-generator.html">Generator</a>
+      <a href="/gpt-image-2-api.html" aria-current="page">API</a>
+      <a href="/how-to-use-gpt-image-2.html">Guide</a>
+      <a href="/how-to-try-gpt-image-2.html">Try</a>
+      <a href="/chatgpt-image-gen-2.html">Gen 2</a>
+      <a href="/gpt-images-2-0.html">Images 2.0</a>
+      <a href="/chatgpt-images-2-0.html">ChatGPT 2.0</a>
+      <a href="/openai-image-2.html">OpenAI 2</a>
+      <a href="/got-image-2.html">Got</a>
+      <a href="/gpt-image-2-demo.html">Demo</a>
+      <a href="/gpt-image-2-release-date.html">Release Date</a>
+      <a href="/gpt-image-2-vs-nanobanana.html">Vs Nano Banana</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="api-hero">
+      <div class="api-hero-grid">
+        <div>
+          <p class="eyebrow">API ACCESS</p>
+          <h1>GPT Image 2 API</h1>
+          <p class="hero-copy">Explore GPT Image 2 API access, prompt examples, pricing ideas, and common image generation workflows.</p>
+          <p class="hero-copy">Explore GPT Image 2 API docs, pricing ideas, example requests, and common prompt-based image generation workflows.</p>
+          <div class="hero-actions">
+            <a class="button primary" href="https://www.aicovea.com/gpt-image-2" target="_blank" rel="noopener">Try GPT Image 2 Now</a>
+            <a class="button secondary" href="#api-examples" data-scroll-examples>View API Examples</a>
+          </div>
+          <p class="conversion-note">No login required. Start with a faster GPT Image 2 workflow online.</p>
+          <p class="api-hero-note">Use cases include poster generation, product visuals, UI mockups, creative ads, and text-heavy image concepts.</p>
+        </div>
+        <aside class="api-hero-card" aria-label="API overview card">
+          <div class="api-status-row">
+            <span class="api-pill">Docs intent</span>
+            <span class="api-pill">Examples</span>
+            <span class="api-pill">Pricing factors</span>
+          </div>
+          <div class="endpoint-box">
+            <div class="endpoint-line">
+              <span>Model</span>
+              <code>gpt-image-2</code>
+            </div>
+            <div class="endpoint-line">
+              <span>Input</span>
+              <code>prompt + size + quality</code>
+            </div>
+            <div class="endpoint-line">
+              <span>Output</span>
+              <code>generated image asset</code>
+            </div>
+            <div class="endpoint-line">
+              <span>Fit</span>
+              <code>apps, tools, content workflows</code>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="api-demo-section" aria-label="API request demo">
+      <div class="api-demo-shell">
+        <section class="api-demo-panel">
+          <p class="eyebrow">Request demo</p>
+          <h2>API Request Demo</h2>
+          <label class="field-label" for="api-request">Example JSON payload</label>
+          <textarea id="api-request" class="api-request-input" rows="9">{
+  "model": "gpt-image-2",
+  "prompt": "A cinematic product poster with clean typography"
+}</textarea>
+          <button class="api-run-button" type="button" data-run-api-demo>Run Example Request</button>
+          <div class="api-demo-result">
+            <strong>Ready to preview</strong>
+            <span>This demo shows the shape of a prompt-based image request without calling a real API.</span>
+          </div>
+        </section>
+        <aside class="api-preview-panel">
+          <p class="eyebrow">Preview</p>
+          <h2>Preview Result</h2>
+          <div class="api-preview-grid" data-api-preview-grid>
+            <div class="api-preview-tile"><span></span><strong>Poster layout</strong></div>
+            <div class="api-preview-tile"><span></span><strong>Product visual</strong></div>
+            <div class="api-preview-tile"><span></span><strong>UI mockup</strong></div>
+          </div>
+          <div class="api-demo-result" data-api-demo-result aria-live="polite">
+            <strong>Example output area</strong>
+            <span>Run the example request to update this preview status.</span>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="content-section">
+      <div class="section-heading">
+        <p class="eyebrow">Definition</p>
+        <h2>What Is GPT Image 2 API</h2>
+      </div>
+      <p class="wide-copy">GPT Image 2 API is best understood as a developer-facing image generation API concept for prompt-driven visual workflows. Instead of opening a design tool and building from scratch, a product can send a written instruction to an API and receive a generated image asset that fits the requested format. For users searching GPT Image 2 API docs, the practical question is usually not only where an endpoint lives. They want to know what a request might include, how prompts should be structured, what pricing considerations matter, and which workflows justify an API integration.</p>
+      <p class="wide-copy">A useful OpenAI image API style workflow can support poster generation, product visuals, UI mockups, creative ads, social media assets, and text-heavy image concepts. The exact production implementation depends on official API availability and provider documentation, but the pattern is easy to understand: choose a model, write a prompt, configure output settings, run the request, then display or store the result. This page is an independent educational resource for that search intent, not an official documentation page.</p>
+    </section>
+
+    <section class="content-section" id="api-examples">
+      <div class="section-heading">
+        <p class="eyebrow">Examples</p>
+        <h2>GPT Image 2 API Examples</h2>
+        <p>These GPT Image 2 API examples are intentionally compact. They show how developers think about model selection, prompt payloads, and result handling without pretending to document a live official endpoint.</p>
+      </div>
+      <div class="code-example-grid">
+        <article class="code-card">
+          <h3>JavaScript Example</h3>
+          <p>A minimal GPT Image 2 example for a web app or server route that needs to generate images with API-style parameters.</p>
+          <pre class="code-block"><code>const response = await fetch("/api/images", {
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify({
+    model: "gpt-image-2",
+    prompt: "A clean SaaS hero image for an AI poster tool",
+    size: "1024x1024"
+  })
+});
+
+const image = await response.json();</code></pre>
+        </article>
+        <article class="code-card">
+          <h3>Python Example</h3>
+          <p>A short Python-style request shape for backend scripts, batch content workflows, or internal creative tooling.</p>
+          <pre class="code-block"><code>payload = {
+    "model": "gpt-image-2",
+    "prompt": "A premium product visual on a clean studio set",
+    "size": "1024x1024",
+    "quality": "high"
+}
+
+result = image_client.generate(payload)
+print(result["image_url"])</code></pre>
+        </article>
+      </div>
+      <article class="prompt-api-card">
+        <h3>Prompt Example</h3>
+        <p>Prompt structure matters because an image generation API usually performs better when the request includes subject, style, composition, text requirements, and output context.</p>
+        <div class="prompt-list">
+          <article>
+            <strong>Poster prompt</strong>
+            <p>Create a cinematic event poster for a design conference with the exact headline "Future Forms", bold readable typography, a clean stage scene, cool white lighting, and strong empty space for sponsor logos.</p>
+          </article>
+          <article>
+            <strong>Product prompt</strong>
+            <p>Create a premium ecommerce product image of a matte black water bottle on a stone surface, soft studio lighting, realistic shadows, crisp label text, and a minimal background.</p>
+          </article>
+          <article>
+            <strong>UI prompt</strong>
+            <p>Generate a polished mobile dashboard mockup for a personal finance app with readable labels, spending cards, chart modules, bottom navigation, and a calm professional interface style.</p>
+          </article>
+        </div>
+      </article>
+    </section>
+
+    <section class="content-section">
+      <div class="workflow-cta">
+        <div>
+          <p class="eyebrow">Real workflow</p>
+          <h2>Use GPT Image 2 in a Real Workflow</h2>
+          <p>Move from examples and guides to a faster GPT Image 2 workflow for posters, product visuals, UI mockups, and text-based images.</p>
+        </div>
+        <a class="button primary" href="https://www.aicovea.com/gpt-image-2" target="_blank" rel="noopener">Open GPT Image 2 on AICovea</a>
+      </div>
+    </section>
+
+    <section class="content-section">
+      <div class="section-heading">
+        <p class="eyebrow">Cost factors</p>
+        <h2>GPT Image 2 Pricing</h2>
+        <p>GPT Image 2 pricing should be evaluated as a set of pricing factors, not a fixed number on this independent page. Always verify current pricing with the official provider before estimating production cost.</p>
+      </div>
+      <div class="pricing-list">
+        <article class="card">
+          <h3>Image Size</h3>
+          <p>Larger images often require more processing. If a workflow only needs thumbnails or draft concepts, smaller output sizes may be enough for early testing.</p>
+        </article>
+        <article class="card">
+          <h3>Quality Settings</h3>
+          <p>Higher quality settings may affect usage cost or latency. Reserve premium output modes for images that need final presentation quality.</p>
+        </article>
+        <article class="card">
+          <h3>Output Volume</h3>
+          <p>Total cost changes when a tool generates many variations, retries failed prompts, or runs batch workflows for marketing teams.</p>
+        </article>
+        <article class="card">
+          <h3>Generation Frequency</h3>
+          <p>A daily content workflow, an internal design helper, and a public generator can have very different usage patterns and budget needs.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="content-section">
+      <div class="section-heading">
+        <p class="eyebrow">Build ideas</p>
+        <h2>What You Can Build with GPT Image 2 API</h2>
+      </div>
+      <div class="build-grid">
+        <article class="card">
+          <h3>AI poster generator</h3>
+          <p>Turn short campaign briefs into poster concepts with headline placement, lighting direction, and reusable creative styles.</p>
+        </article>
+        <article class="card">
+          <h3>Product image generator</h3>
+          <p>Create ecommerce-ready product scenes for packaging tests, landing pages, concept boards, and ad variation planning.</p>
+        </article>
+        <article class="card">
+          <h3>UI mockup tool</h3>
+          <p>Generate dashboard, mobile app, and landing page mockups from structured interface prompts before moving into design software.</p>
+        </article>
+        <article class="card">
+          <h3>Creative ad builder</h3>
+          <p>Produce ad concepts for different audiences, hooks, formats, and visual angles without rebuilding every idea manually.</p>
+        </article>
+        <article class="card">
+          <h3>Social media asset generator</h3>
+          <p>Draft post images, story layouts, thumbnails, and launch graphics that follow brand direction and content themes.</p>
+        </article>
+        <article class="card">
+          <h3>Marketing visual workflow</h3>
+          <p>Connect briefs, prompt templates, approvals, and generated images into a repeatable workflow for growth and content teams.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="content-section">
+      <div class="intent-panel">
+        <div>
+          <p class="eyebrow">Search intent</p>
+          <h2>Why People Search for GPT Image 2 API</h2>
+          <p>People searching for GPT Image 2 API usually have high intent. They are not only browsing image examples; they are deciding whether an image generation API can be connected to a product, workflow, or internal tool. Some searchers want access details, some want GPT Image 2 API docs, and others want implementation ideas before they invest engineering time.</p>
+          <p>The most useful answer combines access framing, example requests, pricing considerations, and workflow fit. A founder may want to add prompt-based image creation to a SaaS product. A marketer may want repeatable ad images. A developer may need to understand how to generate images with API calls, validate prompts, and handle output storage. This page is built to meet that intent and then guide visitors toward hands-on pages on this site.</p>
+        </div>
+        <ul class="intent-list">
+          <li><strong>Access:</strong> users want to know where API access might fit into a real build.</li>
+          <li><strong>Docs:</strong> users look for request shapes, model names, payloads, and output handling.</li>
+          <li><strong>Pricing:</strong> users compare cost factors before planning a public image tool.</li>
+          <li><strong>Examples:</strong> users need code snippets and prompts before they start implementation.</li>
+          <li><strong>Ideas:</strong> users search for product use cases that justify integration work.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="content-section">
+      <div class="section-heading">
+        <p class="eyebrow">Try online</p>
+        <h2>Try GPT Image 2 Workflows Online</h2>
+        <p>Before building against an API, it helps to test prompts, formats, and workflow expectations in a lighter browser experience.</p>
+      </div>
+      <div class="cta-link-grid">
+        <a class="cta-link-card" href="https://www.aicovea.com/gpt-image-2" target="_blank" rel="noopener">
+          <strong>GPT Image 2 on AICovea</strong>
+          <span>Use a more complete GPT Image 2 workflow with prompts, generation, and guided exploration.</span>
+        </a>
+        <a class="cta-link-card" href="/gpt-image-2-generator.html">
+          <strong>GPT Image 2 Generator</strong>
+          <span>Use a generator-style demo interface.</span>
+        </a>
+        <a class="cta-link-card" href="/gpt-image-2-prompts.html">
+          <strong>GPT Image 2 Prompts</strong>
+          <span>Browse copy-ready prompt examples.</span>
+        </a>
+      </div>
+    </section>
+
+    <section class="content-section faq-section">
+      <div class="section-heading">
+        <p class="eyebrow">FAQ</p>
+        <h2>Frequently Asked Questions</h2>
+      </div>
+      <div class="faq-list">
+        <details>
+          <summary>What is GPT Image 2 API?</summary>
+          <p>GPT Image 2 API refers here to a prompt-based image generation API workflow where an application sends a model name, prompt, and output settings to generate an image. It is useful for tools that need posters, product visuals, UI mockups, creative ads, and repeatable marketing visuals.</p>
+        </details>
+        <details>
+          <summary>Is GPT Image 2 API publicly available?</summary>
+          <p>This page does not confirm official API availability. It is an independent educational resource for API search intent. Before building a production app, check official provider documentation for current model names, access rules, authentication, rate limits, and supported parameters.</p>
+        </details>
+        <details>
+          <summary>How do I use GPT Image 2 API?</summary>
+          <p>A typical implementation starts with a server route that receives a prompt, validates user input, sends a request to an image generation API, waits for the response, and then stores or displays the resulting image. The examples above show the general shape of that workflow.</p>
+        </details>
+        <details>
+          <summary>Does GPT Image 2 API have pricing?</summary>
+          <p>Any real API pricing should be checked with the official provider. In general, image generation cost can depend on size, quality settings, number of outputs, retries, storage needs, and how frequently users generate images.</p>
+        </details>
+        <details>
+          <summary>What can I build with an image generation API?</summary>
+          <p>You can build poster generators, product image tools, UI mockup assistants, creative ad builders, social asset generators, brand concept tools, and content production workflows. The best use case is one where prompt templates and repeatable output formats save meaningful time.</p>
+        </details>
+        <details>
+          <summary>Where can I try GPT Image 2 online?</summary>
+          <p>You can explore related workflows on this site through the GPT Image 2 Online page, the generator-style demo, and the prompt library. Those pages help you test prompt ideas before thinking about a deeper API implementation.</p>
+        </details>
+      </div>
+    </section>
+
+    <section class="content-section">
+      <div class="note-box wide api-disclaimer">
+        <h2>Disclaimer</h2>
+        <p>This page is an independent educational and exploration resource. It is not an official OpenAI API documentation page.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div>
+      <strong>GPT Image 2 Hub</strong>
+      <p>A lightweight resource hub for GPT Image 2 online workflows, API examples, prompt exploration, generator-style tools, demos, and comparisons.</p>
+    </div>
+    <nav aria-label="Footer navigation">
+      <a href="/">Home</a>
+      <a href="/gpt-image-2-api.html">API</a>
+      <a href="/gpt-image-2-online.html">Online</a>
+      <a href="/gpt-image-2-free.html">Free</a>
+      <a href="/gpt-image-2-prompts.html">Prompts</a>
+      <a href="/gpt-image-2-generator.html">Generator</a>
+    </nav>
+  </footer>
+
+  <script src="script.js" defer></script>
+  <script>
+    document.querySelectorAll("[data-scroll-examples]").forEach((button) => {
+      button.addEventListener("click", (event) => {
+        const target = document.querySelector("#api-examples");
+
+        if (!target) {
+          return;
+        }
+
+        event.preventDefault();
+        target.scrollIntoView({ behavior: "smooth", block: "start" });
+      });
+    });
+
+    document.querySelectorAll("[data-run-api-demo]").forEach((button) => {
+      button.addEventListener("click", () => {
+        const result = document.querySelector("[data-api-demo-result]");
+
+        button.disabled = true;
+        button.textContent = "Running request...";
+
+        if (result) {
+          result.classList.add("is-loading");
+          result.innerHTML = "<strong>Preparing example request</strong><span>Checking prompt payload and preview placeholders.</span>";
+        }
+
+        window.setTimeout(() => {
+          button.disabled = false;
+          button.textContent = "Run Example Request";
+
+          if (result) {
+            result.classList.remove("is-loading");
+            result.innerHTML = "<strong>Preview ready</strong><span>Continue with a fuller GPT Image 2 workflow on AICovea.</span><a class=\"result-cta\" href=\"https://www.aicovea.com/gpt-image-2\" target=\"_blank\" rel=\"noopener\">Continue on AICovea</a>";
+          }
+        }, 1200);
+      });
+    });
+  </script>
+</body>
+</html>

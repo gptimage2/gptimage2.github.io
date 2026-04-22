@@ -1,0 +1,645 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>How to Try GPT Image 2 Online (No Setup Needed)</title>
+  <meta name="description" content="Try GPT Image 2 online instantly. No setup required. Learn how to access image generation workflows and explore prompt-based visuals in seconds.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://gptimage2.github.io/how-to-try-gpt-image-2.html">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="How to Try GPT Image 2 Online (No Setup Needed)">
+  <meta property="og:description" content="Try GPT Image 2 online instantly. No setup required. Learn how to access image generation workflows and explore prompt-based visuals in seconds.">
+  <meta property="og:url" content="https://gptimage2.github.io/how-to-try-gpt-image-2.html">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="How to Try GPT Image 2 Online (No Setup Needed)">
+  <meta name="twitter:description" content="Try GPT Image 2 online instantly. No setup required. Learn how to access image generation workflows and explore prompt-based visuals in seconds.">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <script async src="https://plausible.io/js/pa-SaOy0buOcCvezaGy0UbzM.js"></script>
+  <script>
+    window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+    plausible.init()
+  </script>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .access-hero,
+    .try-tool-section {
+      width: min(1180px, calc(100% - 10vw));
+      margin: 0 auto;
+    }
+
+    .access-hero {
+      padding: 4rem 0 1.25rem;
+    }
+
+    .access-hero-grid,
+    .try-tool-grid,
+    .access-grid,
+    .more-tool-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(360px, 0.85fr);
+      gap: 1.25rem;
+      align-items: stretch;
+    }
+
+    .access-hero h1 {
+      max-width: 760px;
+      font-size: clamp(3rem, 5.9vw, 5.2rem);
+    }
+
+    .access-note {
+      margin-top: 1.2rem;
+      color: var(--muted);
+      font-weight: 740;
+    }
+
+    .conversion-note {
+      margin: 0.75rem 0 0;
+      color: var(--muted);
+      font-size: 0.94rem;
+      font-weight: 760;
+    }
+
+    .access-card,
+    .try-panel,
+    .try-preview,
+    .path-card-small,
+    .build-card,
+    .more-tool-card,
+    .intent-card {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+      box-shadow: var(--shadow);
+    }
+
+    .access-card {
+      display: grid;
+      gap: 0.75rem;
+      align-content: center;
+      min-height: 330px;
+      padding: 1.35rem;
+    }
+
+    .access-signal {
+      padding: 0.95rem;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fbfcff;
+    }
+
+    .access-signal span {
+      display: block;
+      margin-bottom: 0.25rem;
+      color: var(--green);
+      font-size: 0.78rem;
+      font-weight: 820;
+      text-transform: uppercase;
+    }
+
+    .try-tool-section {
+      padding: 0.75rem 0 4rem;
+    }
+
+    .try-shell {
+      padding: clamp(1rem, 2vw, 1.35rem);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.76);
+      box-shadow: var(--shadow);
+    }
+
+    .try-panel,
+    .try-preview {
+      min-height: 430px;
+      padding: clamp(1.2rem, 2vw, 1.5rem);
+    }
+
+    .try-textarea {
+      width: 100%;
+      min-height: 225px;
+      padding: 1rem;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+      color: var(--text);
+      font: inherit;
+      resize: vertical;
+    }
+
+    .try-textarea:focus {
+      outline: 3px solid rgba(36, 88, 255, 0.14);
+      border-color: #9db0ff;
+    }
+
+    .preview-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 0.75rem;
+    }
+
+    .preview-cardlet {
+      display: grid;
+      align-content: end;
+      min-height: 185px;
+      padding: 0.9rem;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background:
+        linear-gradient(145deg, rgba(36, 88, 255, 0.1), rgba(15, 143, 114, 0.12)),
+        #fbfcff;
+    }
+
+    .preview-cardlet:nth-child(2) {
+      background:
+        linear-gradient(145deg, rgba(255, 201, 40, 0.18), rgba(36, 88, 255, 0.08)),
+        #fff;
+    }
+
+    .preview-cardlet:nth-child(3) {
+      background:
+        linear-gradient(145deg, rgba(15, 143, 114, 0.13), rgba(116, 87, 255, 0.09)),
+        #fff;
+    }
+
+    .preview-cardlet span {
+      width: 70%;
+      height: 10px;
+      margin-bottom: 0.55rem;
+      border-radius: 999px;
+      background: rgba(23, 32, 51, 0.13);
+    }
+
+    .preview-cardlet strong {
+      color: rgba(23, 32, 51, 0.62);
+      font-size: 0.86rem;
+    }
+
+    .try-run-button {
+      min-height: 56px;
+      margin-top: 1rem;
+      padding: 0 1.1rem;
+      border: 0;
+      border-radius: 8px;
+      background: #ffc928;
+      color: #111827;
+      font: inherit;
+      font-weight: 840;
+      cursor: pointer;
+      box-shadow: 0 14px 28px rgba(255, 201, 40, 0.26);
+    }
+
+    .try-run-button:disabled {
+      cursor: wait;
+      opacity: 0.72;
+    }
+
+    .try-status {
+      display: grid;
+      gap: 0.45rem;
+      margin-top: 1rem;
+      padding: 1rem;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #f7fbff;
+      color: var(--muted);
+    }
+
+    .try-status strong {
+      color: var(--text);
+    }
+
+    .workflow-cta {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 1.25rem;
+      align-items: center;
+      padding: clamp(1.25rem, 3vw, 2rem);
+      border: 1px solid #b9c7ec;
+      border-radius: 8px;
+      background:
+        linear-gradient(135deg, rgba(36, 88, 255, 0.1), rgba(15, 143, 114, 0.1)),
+        #fff;
+      box-shadow: var(--shadow);
+    }
+
+    .workflow-cta p {
+      max-width: 760px;
+      color: var(--muted);
+    }
+
+    .result-cta {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: fit-content;
+      min-height: 40px;
+      margin-top: 0.35rem;
+      padding: 0 0.85rem;
+      border-radius: 8px;
+      color: #fff;
+      background: var(--blue);
+      font-weight: 780;
+    }
+
+    .result-cta:hover {
+      color: #fff;
+      background: var(--blue-dark);
+    }
+
+    .path-grid-small,
+    .build-grid-small,
+    .intent-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+
+    .build-grid-small {
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+    }
+
+    .path-card-small,
+    .build-card,
+    .more-tool-card,
+    .intent-card {
+      padding: 1.2rem;
+    }
+
+    .fast-cta {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 1.25rem;
+      align-items: center;
+      padding: clamp(1.3rem, 3vw, 2rem);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background:
+        linear-gradient(135deg, rgba(36, 88, 255, 0.08), rgba(15, 143, 114, 0.08)),
+        #fff;
+      box-shadow: var(--shadow);
+    }
+
+    .more-tool-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      margin-top: 1.5rem;
+    }
+
+    .more-tool-card {
+      display: grid;
+      gap: 0.55rem;
+      min-height: 160px;
+      color: var(--text);
+    }
+
+    .more-tool-card:hover {
+      color: var(--text);
+      border-color: #b9c7ec;
+      transform: translateY(-2px);
+    }
+
+    .more-tool-card span {
+      color: var(--muted);
+    }
+
+    @media (max-width: 920px) {
+      .access-hero-grid,
+      .try-tool-grid,
+      .access-grid,
+      .more-tool-grid,
+      .path-grid-small,
+      .build-grid-small,
+      .intent-grid,
+      .workflow-cta,
+      .fast-cta {
+        grid-template-columns: 1fr;
+      }
+
+      .preview-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 540px) {
+      .access-hero,
+      .try-tool-section {
+        width: min(100% - 2rem, 1180px);
+      }
+
+      .access-hero {
+        padding-top: 4rem;
+      }
+
+      .preview-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How to try GPT Image 2?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The fastest way is to use an online or generator-style workflow, enter a prompt, preview the result pattern, and explore prompt examples before moving into deeper tools."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is GPT Image 2 available online?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "This independent page helps users explore GPT Image 2 online workflows. Current official availability should be checked through confirmed provider channels."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do I need an account?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Account requirements depend on the tool or provider. This page focuses on no-setup exploration paths and prompt workflows."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I use GPT Image 2 for free?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Free access depends on the service being used. This site provides free educational prompt exploration and links to related workflow pages."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Where can I test prompts?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "You can test prompt structures through the online, generator, and prompt library pages on this site."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What can GPT Image 2 create?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Common workflows include posters, product images, UI mockups, ads, social visuals, typography concepts, and other prompt-based creative images."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <div class="launch-banner" role="region" aria-label="GPT Image 2 launch announcement">
+    <span class="launch-banner-message"><img class="launch-banner-icon" src="/icon.png" alt="" aria-hidden="true">GPT Image 2 image generation and editing are now live.</span>
+    <a href="https://www.aicovea.com/gpt-image-2" target="_blank" rel="noopener">Try it now</a>
+  </div>
+  <header class="site-header">
+    <a class="brand" href="/" aria-label="GPT Image 2 Hub home">
+      <span class="brand-mark">G2</span>
+      <span>GPT Image 2 Hub</span>
+    </a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+    <nav class="site-nav" id="site-nav" aria-label="Primary navigation">
+      <a href="/">Home</a>
+      <a href="/gpt-image-2-online.html">Online</a>
+      <a href="/gpt-image-2-free.html">Free</a>
+      <a href="/gpt-image-2-prompts.html">Prompts</a>
+      <a href="/gpt-image-2-generator.html">Generator</a>
+      <a href="/gpt-image-2-api.html">API</a>
+      <a href="/how-to-use-gpt-image-2.html">Guide</a>
+      <a href="/how-to-try-gpt-image-2.html" aria-current="page">Try</a>
+      <a href="/chatgpt-image-gen-2.html">Gen 2</a>
+      <a href="/gpt-images-2-0.html">Images 2.0</a>
+      <a href="/chatgpt-images-2-0.html">ChatGPT 2.0</a>
+      <a href="/openai-image-2.html">OpenAI 2</a>
+      <a href="/got-image-2.html">Got</a>
+      <a href="/gpt-image-2-demo.html">Demo</a>
+      <a href="/gpt-image-2-release-date.html">Release Date</a>
+      <a href="/gpt-image-2-vs-nanobanana.html">Vs Nano Banana</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="access-hero">
+      <div class="access-hero-grid">
+        <div>
+          <p class="eyebrow">INSTANT ACCESS</p>
+          <h1>How to Try GPT Image 2</h1>
+          <p class="hero-copy">Access GPT Image 2 instantly — no installation, no waiting. Start exploring image generation workflows in seconds.</p>
+          <p class="hero-copy">Try GPT Image 2 online instantly. Explore prompt-based image generation workflows without setup.</p>
+          <div class="hero-actions">
+            <a class="button primary" href="https://www.aicovea.com/gpt-image-2" target="_blank" rel="noopener">Try GPT Image 2 Now</a>
+            <a class="button secondary" href="#try-tool" data-scroll-tool>Try Demo Below</a>
+          </div>
+          <p class="conversion-note">No login required. Start with a faster GPT Image 2 workflow online.</p>
+          <p class="access-note">Best for users who want quick access to GPT Image 2 without technical setup.</p>
+        </div>
+        <aside class="access-card" aria-label="Access options">
+          <div class="access-signal"><span>01</span><strong>Online workflows</strong><p>Open a browser page and start with prompt-based exploration.</p></div>
+          <div class="access-signal"><span>02</span><strong>Generator demos</strong><p>Use controls, prompt fields, and preview panels before deeper setup.</p></div>
+          <div class="access-signal"><span>03</span><strong>API workflows</strong><p>Developers can study integration patterns and pricing factors.</p></div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="try-tool-section" id="try-tool" aria-label="Try GPT Image 2 Online">
+      <div class="try-shell">
+        <div class="try-tool-grid">
+          <section class="try-panel">
+            <p class="eyebrow">Online demo</p>
+            <h2>Try GPT Image 2 Online</h2>
+            <label class="field-label" for="try-prompt">Prompt idea</label>
+            <textarea id="try-prompt" class="try-textarea" placeholder="Describe your image idea (poster, UI mockup, product shot, etc.)"></textarea>
+            <button class="try-run-button" type="button" data-try-demo>Generate Image</button>
+          </section>
+          <aside class="try-preview">
+            <p class="eyebrow">Preview</p>
+            <h2>Preview</h2>
+            <div class="preview-grid">
+              <div class="preview-cardlet"><span></span><strong>Poster</strong></div>
+              <div class="preview-cardlet"><span></span><strong>Product</strong></div>
+              <div class="preview-cardlet"><span></span><strong>UI</strong></div>
+            </div>
+            <div class="try-status" data-try-status aria-live="polite">
+              <strong>Ready for a prompt</strong>
+              <span>Use the demo to understand the fastest GPT Image 2 access path.</span>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section">
+      <div class="section-heading">
+        <p class="eyebrow">Access paths</p>
+        <h2>How to Access GPT Image 2</h2>
+        <p>People searching how to try GPT Image 2 usually want a direct path, not a technical explanation first. If you want to access GPT Image 2 for quick visual exploration, the right path depends on what you want to do.</p>
+      </div>
+      <div class="path-grid-small">
+        <article class="path-card-small">
+          <h3>Online tools</h3>
+          <p>Online pages are best for quick exploration. They help you try GPT Image 2 online, test a few prompt ideas, and understand what a useful workflow should feel like.</p>
+        </article>
+        <article class="path-card-small">
+          <h3>Prompt-based generators</h3>
+          <p>Generator-style pages are useful when you want input controls, example prompts, preview states, and a more guided way to move from idea to image direction.</p>
+        </article>
+        <article class="path-card-small">
+          <h3>API workflows</h3>
+          <p>Developers who want GPT Image 2 access inside an app should study API patterns, prompt payloads, output handling, and pricing considerations before implementation.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="content-section">
+      <div class="fast-cta">
+        <div>
+          <p class="eyebrow">Fastest route</p>
+          <h2>Fastest Way to Try GPT Image 2</h2>
+          <p>The fastest path is to open an online workflow, paste a short prompt, and compare the result direction with stronger prompt examples. You can explore GPT Image 2 online without installing a local tool or writing code.</p>
+        </div>
+        <a class="button primary" href="https://www.aicovea.com/gpt-image-2" target="_blank" rel="noopener">Try GPT Image 2 Online</a>
+      </div>
+    </section>
+
+    <section class="content-section">
+      <div class="workflow-cta">
+        <div>
+          <p class="eyebrow">Real workflow</p>
+          <h2>Use GPT Image 2 in a Real Workflow</h2>
+          <p>Move from examples and guides to a faster GPT Image 2 workflow for posters, product visuals, UI mockups, and text-based images.</p>
+        </div>
+        <a class="button primary" href="https://www.aicovea.com/gpt-image-2" target="_blank" rel="noopener">Open GPT Image 2 on AICovea</a>
+      </div>
+    </section>
+
+    <section class="content-section">
+      <div class="access-grid">
+        <div>
+          <p class="eyebrow">Setup</p>
+          <h2>Do You Need an API Key?</h2>
+          <p>Most ordinary users do not need an API key to explore prompt-based image generation workflows. If your goal is to test prompts, create example visuals, compare styles, or understand what GPT Image 2 access might offer, a browser workflow is usually enough.</p>
+          <p>Developers are different. If you want to connect an image generation API to a SaaS product, design tool, marketing workflow, or internal automation, then API access, authentication, rate limits, and pricing matter. That is why this site separates online exploration from API workflow planning.</p>
+        </div>
+        <div class="note-box">
+          <h3>Choose by user type</h3>
+          <p>Beginners should start with online tools. Prompt writers should browse examples. Developers should review API patterns after the workflow is clear.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section">
+      <div class="section-heading">
+        <p class="eyebrow">Try ideas</p>
+        <h2>What You Can Try with GPT Image 2</h2>
+      </div>
+      <div class="build-grid-small">
+        <article class="build-card"><h3>Posters</h3><p>Test event posters, launch graphics, cover concepts, and text-heavy layouts.</p></article>
+        <article class="build-card"><h3>Product images</h3><p>Explore ecommerce photos, packaging scenes, and lifestyle product visuals.</p></article>
+        <article class="build-card"><h3>UI mockups</h3><p>Generate app screens, dashboards, onboarding views, and SaaS hero concepts.</p></article>
+        <article class="build-card"><h3>Ads</h3><p>Create campaign visuals, social creatives, and quick variations for testing hooks.</p></article>
+        <article class="build-card"><h3>Text visuals</h3><p>Experiment with headlines, labels, posters, menus, and typography-driven designs.</p></article>
+      </div>
+    </section>
+
+    <section class="content-section">
+      <div class="section-heading">
+        <p class="eyebrow">Intent</p>
+        <h2>Why People Search for GPT Image 2 Access</h2>
+        <p>GPT Image 2 access searches are usually practical. Users want to try before they commit, explore a new model, test prompts, compare outputs, and decide whether the workflow fits their creative or product needs. Some want a no-setup path. Others want to know how to get GPT Image 2 for a product build. A clear access page should help both groups choose the next step.</p>
+      </div>
+      <div class="intent-grid">
+        <article class="intent-card"><h3>Try before commit</h3><p>Users want to see whether the workflow fits before spending time or budget.</p></article>
+        <article class="intent-card"><h3>Explore a new model</h3><p>Searchers want to understand output style, text handling, and practical quality.</p></article>
+        <article class="intent-card"><h3>Compare outputs</h3><p>People test prompt versions and compare posters, UI mockups, products, and ads.</p></article>
+      </div>
+    </section>
+
+    <section class="content-section">
+      <div class="section-heading">
+        <p class="eyebrow">More tools</p>
+        <h2>Explore More GPT Image 2 Tools</h2>
+      </div>
+      <div class="more-tool-grid">
+        <a class="more-tool-card" href="https://www.aicovea.com/gpt-image-2" target="_blank" rel="noopener"><strong>GPT Image 2 on AICovea</strong><span>Use a more complete GPT Image 2 workflow with prompts, generation, and guided exploration.</span></a>
+        <a class="more-tool-card" href="/gpt-image-2-free.html"><strong>GPT Image 2 Free</strong><span>Learn what free exploration can mean without overpromising access.</span></a>
+        <a class="more-tool-card" href="/gpt-image-2-api.html"><strong>GPT Image 2 API</strong><span>Review API examples, docs intent, and pricing factors.</span></a>
+      </div>
+    </section>
+
+    <section class="content-section faq-section">
+      <div class="section-heading">
+        <p class="eyebrow">FAQ</p>
+        <h2>Frequently Asked Questions</h2>
+      </div>
+      <div class="faq-list">
+        <details><summary>How to try GPT Image 2?</summary><p>Use an online or generator-style workflow, enter a prompt, review the preview direction, and refine the prompt with clearer subject, style, layout, and text instructions.</p></details>
+        <details><summary>Is GPT Image 2 available online?</summary><p>This page helps users explore GPT Image 2 online workflows and access intent. Current official availability should always be checked through confirmed product channels.</p></details>
+        <details><summary>Do I need an account?</summary><p>Account requirements depend on the actual tool or provider. For learning and prompt exploration, this site gives you no-setup pages and examples to review first.</p></details>
+        <details><summary>Can I use GPT Image 2 for free?</summary><p>Free access depends on the service being used. This site provides free educational workflows and prompt examples, but it does not promise unlimited free model access.</p></details>
+        <details><summary>Where can I test prompts?</summary><p>You can test prompt structure through the online page, generator page, and prompt library linked from this page.</p></details>
+        <details><summary>What can GPT Image 2 create?</summary><p>Common ideas include posters, product images, UI mockups, ads, social content, readable text visuals, portraits, and creative concept images.</p></details>
+      </div>
+    </section>
+
+    <section class="content-section">
+      <div class="note-box wide">
+        <h2>Disclaimer</h2>
+        <p>This page is an independent guide for exploring GPT Image 2 workflows.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div>
+      <strong>GPT Image 2 Hub</strong>
+      <p>A lightweight resource hub for GPT Image 2 access paths, online workflows, prompt exploration, API examples, generator-style tools, and trend pages.</p>
+    </div>
+    <nav aria-label="Footer navigation">
+      <a href="/">Home</a>
+      <a href="/gpt-image-2-online.html">Online</a>
+      <a href="/gpt-image-2-free.html">Free</a>
+      <a href="/gpt-image-2-prompts.html">Prompts</a>
+      <a href="/gpt-image-2-api.html">API</a>
+      <a href="/how-to-use-gpt-image-2.html">Guide</a>
+      <a href="/how-to-try-gpt-image-2.html">Try</a>
+      <a href="/chatgpt-image-gen-2.html">Gen 2</a>
+    </nav>
+  </footer>
+
+  <script src="script.js" defer></script>
+  <script>
+    document.querySelectorAll("[data-scroll-tool]").forEach((button) => {
+      button.addEventListener("click", (event) => {
+        const target = document.querySelector("#try-tool");
+        if (!target) return;
+        event.preventDefault();
+        target.scrollIntoView({ behavior: "smooth", block: "start" });
+      });
+    });
+
+    document.querySelectorAll("[data-try-demo]").forEach((button) => {
+      button.addEventListener("click", () => {
+        const status = document.querySelector("[data-try-status]");
+        button.disabled = true;
+        button.textContent = "Generating...";
+        if (status) {
+          status.innerHTML = "<strong>Preparing demo</strong><span>Building a quick preview state.</span>";
+        }
+        window.setTimeout(() => {
+          button.disabled = false;
+          button.textContent = "Generate Image";
+          if (status) {
+            status.innerHTML = "<strong>Preview ready</strong><span>Continue with a fuller GPT Image 2 workflow on AICovea.</span><a class=\"result-cta\" href=\"https://www.aicovea.com/gpt-image-2\" target=\"_blank\" rel=\"noopener\">Continue on AICovea</a>";
+          }
+        }, 1000);
+      });
+    });
+  </script>
+</body>
+</html>
