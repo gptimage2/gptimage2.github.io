@@ -50,6 +50,42 @@
       letter-spacing: 0;
     }
 
+    .launch-banner {
+      position: relative;
+      z-index: 30;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 0.75rem;
+      min-height: 48px;
+      padding: 0.55rem 5vw;
+      background: #ffd84a;
+      color: #111827;
+      border-bottom: 1px solid rgba(17, 24, 39, 0.12);
+      text-align: center;
+      font-size: 0.98rem;
+      font-weight: 760;
+    }
+
+    .launch-banner a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 34px;
+      padding: 0.35rem 0.85rem;
+      border-radius: 8px;
+      color: #fff;
+      background: #111827;
+      font-weight: 820;
+      box-shadow: 0 8px 18px rgba(17, 24, 39, 0.18);
+    }
+
+    .launch-banner a:hover {
+      color: #fff;
+      background: var(--blue);
+    }
+
     a {
       color: var(--blue);
       text-decoration: none;
@@ -792,6 +828,12 @@
         padding: 0 1rem;
       }
 
+      .launch-banner {
+        padding-right: 1rem;
+        padding-left: 1rem;
+        font-size: 0.92rem;
+      }
+
       .site-nav {
         right: 1rem;
         left: 1rem;
@@ -869,6 +911,10 @@
   </script>
 </head>
 <body>
+  <div class="launch-banner" role="region" aria-label="GPT Image 2 launch announcement">
+    <span>GPT Image 2 image generation and editing are now live.</span>
+    <a href="https://www.aicovea.com/gpt-image-2" target="_blank" rel="noopener">Try it now</a>
+  </div>
   <header class="site-header">
     <a class="brand" href="/" aria-label="GPT Image 2 Hub home">
       <span class="brand-mark">G2</span>
