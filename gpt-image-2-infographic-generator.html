@@ -1,0 +1,772 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GPT Image 2 Infographic Generator (Create Diagrams & Charts)</title>
+  <meta name="description" content="Create infographics, diagrams, and educational visuals with GPT Image 2. Turn ideas into structured charts and layouts using prompts with ease.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://gptimage2.github.io/gpt-image-2-infographic-generator.html">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="GPT Image 2 Infographic Generator (Create Diagrams & Charts)">
+  <meta property="og:description" content="Create infographics, diagrams, and educational visuals with GPT Image 2. Turn ideas into structured charts and layouts using prompts with ease.">
+  <meta property="og:url" content="https://gptimage2.github.io/gpt-image-2-infographic-generator.html">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="GPT Image 2 Infographic Generator (Create Diagrams & Charts)">
+  <meta name="twitter:description" content="Create infographics, diagrams, and educational visuals with GPT Image 2. Turn ideas into structured charts and layouts using prompts with ease.">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <script async src="https://plausible.io/js/pa-SaOy0buOcCvezaGy0UbzM.js"></script>
+  <script>
+    window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+    plausible.init()
+  </script>
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is a GPT Image 2 infographic generator?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A GPT Image 2 infographic generator is a prompt-based workflow for creating diagrams, charts, and educational visuals with structured layout guidance."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What kinds of visuals can I create?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "You can create cutaway diagrams, timelines, product comparison charts, educational explainers, architecture visuals, and marketing infographics."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Why does GPT Image 2 help with diagrams?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Diagram generation benefits from structured layout prompting, readable labels, and multi-element composition inside a single image brief."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How should I write infographic prompts?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Specify the layout type, section count, labels, chart or icon treatment, overall reading flow, and the style of the final diagram."
+        }
+      }
+    ]
+  }
+  </script>
+  <style>
+    body.infographic-page {
+      background:
+        radial-gradient(circle at top left, rgba(15, 143, 114, 0.1), transparent 22%),
+        radial-gradient(circle at top right, rgba(36, 88, 255, 0.1), transparent 22%),
+        var(--bg);
+    }
+
+    .info-shell {
+      width: min(1180px, calc(100% - 8vw));
+      margin: 0 auto;
+      padding: 4.25rem 0 2.75rem;
+    }
+
+    .info-hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.05fr) minmax(360px, 0.95fr);
+      gap: 1.25rem;
+      align-items: stretch;
+    }
+
+    .info-hero-copy h1 {
+      max-width: 640px;
+      font-size: clamp(2.9rem, 5vw, 4.45rem);
+    }
+
+    .info-hero-copy .hero-copy {
+      max-width: 620px;
+      margin-top: 1rem;
+    }
+
+    .info-note {
+      display: inline-flex;
+      align-items: center;
+      min-height: 40px;
+      margin-top: 1rem;
+      padding: 0 0.95rem;
+      border: 1px solid #cfe8df;
+      border-radius: 999px;
+      background: #f0faf7;
+      color: #11634f;
+      font-size: 0.92rem;
+      font-weight: 760;
+    }
+
+    .info-board,
+    .info-panel,
+    .info-step,
+    .info-link-card {
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: #fff;
+      box-shadow: var(--shadow);
+    }
+
+    .info-board {
+      padding: 1.2rem;
+      background:
+        linear-gradient(180deg, rgba(15, 143, 114, 0.06), rgba(36, 88, 255, 0.04)),
+        #fff;
+    }
+
+    .info-board-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .info-badge,
+    .info-pill {
+      display: inline-flex;
+      align-items: center;
+      min-height: 28px;
+      padding: 0 0.7rem;
+      border-radius: 999px;
+      font-size: 0.78rem;
+      font-weight: 820;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .info-badge {
+      color: var(--green);
+      background: #ebf8f4;
+    }
+
+    .info-pill {
+      color: var(--blue-dark);
+      background: var(--surface-strong);
+    }
+
+    .info-layout {
+      display: grid;
+      gap: 0.85rem;
+      padding: 1rem;
+      border: 1px solid #e5ebf6;
+      border-radius: 14px;
+      background: rgba(255, 255, 255, 0.88);
+    }
+
+    .info-layout-top {
+      display: grid;
+      grid-template-columns: 1.3fr 0.7fr;
+      gap: 0.85rem;
+    }
+
+    .info-panel,
+    .info-step {
+      padding: 1rem;
+    }
+
+    .info-panel span,
+    .info-step span {
+      display: block;
+      margin-bottom: 0.4rem;
+      color: var(--green);
+      font-size: 0.74rem;
+      font-weight: 820;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .info-panel strong,
+    .info-step strong {
+      display: block;
+      margin-bottom: 0.45rem;
+      font-size: 1rem;
+      line-height: 1.2;
+    }
+
+    .info-panel p,
+    .info-step p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .info-flow {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 0.85rem;
+    }
+
+    .info-grid {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .info-grid.three {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .info-preview {
+      position: relative;
+      overflow: hidden;
+      min-height: 190px;
+      margin-bottom: 1rem;
+      border: 1px solid #dce7f3;
+      border-radius: 14px;
+      background: linear-gradient(180deg, #fbfeff 0%, #eef6fb 100%);
+    }
+
+    .info-preview::after {
+      content: "";
+      position: absolute;
+      inset: auto 16px 16px;
+      height: 9px;
+      border-radius: 999px;
+      background: rgba(30, 64, 175, 0.12);
+    }
+
+    .info-preview-badge,
+    .info-preview-title {
+      position: absolute;
+      left: 16px;
+      z-index: 2;
+    }
+
+    .info-preview-badge {
+      top: 16px;
+      min-height: 28px;
+      padding: 0 0.65rem;
+      border-radius: 999px;
+      color: var(--blue-dark);
+      background: rgba(255, 255, 255, 0.88);
+      font-size: 0.74rem;
+      font-weight: 820;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .info-preview-title {
+      right: 16px;
+      bottom: 28px;
+      color: var(--text);
+      font-size: 1rem;
+      font-weight: 820;
+      line-height: 1.1;
+    }
+
+    .diagram-layer,
+    .diagram-stack,
+    .diagram-bars,
+    .diagram-grid,
+    .diagram-columns,
+    .diagram-timeline {
+      position: absolute;
+      inset: 48px 18px 24px;
+      z-index: 1;
+    }
+
+    .diagram-layer {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.7rem;
+    }
+
+    .diagram-layer div,
+    .diagram-stack div,
+    .diagram-grid div,
+    .diagram-columns div,
+    .diagram-timeline div {
+      border: 1px solid rgba(148, 163, 184, 0.34);
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.78);
+    }
+
+    .diagram-layer div:first-child {
+      grid-column: span 2;
+      min-height: 48px;
+    }
+
+    .diagram-layer div:nth-child(2),
+    .diagram-layer div:nth-child(3) {
+      min-height: 78px;
+    }
+
+    .diagram-stack {
+      display: grid;
+      gap: 0.7rem;
+    }
+
+    .diagram-stack div:nth-child(1) {
+      min-height: 38px;
+    }
+
+    .diagram-stack div:nth-child(2) {
+      min-height: 54px;
+    }
+
+    .diagram-stack div:nth-child(3) {
+      min-height: 76px;
+    }
+
+    .diagram-bars {
+      display: grid;
+      align-items: end;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 0.55rem;
+    }
+
+    .diagram-bars div {
+      border-radius: 12px 12px 4px 4px;
+      background: linear-gradient(180deg, rgba(36, 88, 255, 0.24), rgba(15, 143, 114, 0.3));
+    }
+
+    .diagram-bars div:nth-child(1) {
+      height: 54px;
+    }
+
+    .diagram-bars div:nth-child(2) {
+      height: 82px;
+    }
+
+    .diagram-bars div:nth-child(3) {
+      height: 106px;
+    }
+
+    .diagram-bars div:nth-child(4) {
+      height: 72px;
+    }
+
+    .diagram-bars div:nth-child(5) {
+      height: 92px;
+    }
+
+    .diagram-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.7rem;
+    }
+
+    .diagram-grid div {
+      min-height: 58px;
+    }
+
+    .diagram-columns {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.7rem;
+    }
+
+    .diagram-columns div {
+      min-height: 118px;
+    }
+
+    .diagram-timeline {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0.55rem;
+      align-items: center;
+    }
+
+    .diagram-timeline div {
+      min-height: 70px;
+      position: relative;
+    }
+
+    .diagram-timeline div::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      right: -0.38rem;
+      width: 0.76rem;
+      height: 2px;
+      background: #b7cbe5;
+      transform: translateY(-50%);
+    }
+
+    .diagram-timeline div:last-child::after {
+      display: none;
+    }
+
+    .info-link-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+
+    .info-link-card {
+      display: grid;
+      gap: 0.5rem;
+      min-height: 148px;
+      padding: 1.2rem;
+      color: var(--text);
+    }
+
+    .info-link-card span {
+      color: var(--muted);
+    }
+
+    .infographic-page .prompt-example-card,
+    .infographic-page .feature-block,
+    .infographic-page .workflow-cta,
+    .info-link-card {
+      border-radius: 16px;
+    }
+
+    .infographic-page .workflow-cta {
+      background:
+        linear-gradient(135deg, rgba(15, 143, 114, 0.12), rgba(36, 88, 255, 0.08)),
+        #fff;
+    }
+
+    @media (max-width: 860px) {
+      .info-shell {
+        width: min(var(--max), calc(100% - 10vw));
+      }
+
+      .info-hero-grid,
+      .info-grid.three,
+      .info-link-grid,
+      .info-layout-top,
+      .info-flow {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body class="infographic-page">
+  <div class="launch-banner" role="region" aria-label="GPT Image 2 launch announcement">
+    <span class="launch-banner-message"><img class="launch-banner-icon" src="/icon.png" alt="" aria-hidden="true">GPT Image 2 image generation and editing are now live.</span>
+    <a href="https://www.aicovea.com/gpt-image-2" target="_blank" rel="noopener">Try it now</a>
+  </div>
+  <header class="site-header">
+    <a class="brand" href="/" aria-label="GPT Image 2 Hub home">
+      <span class="brand-mark">G2</span>
+      <span>GPT Image 2 Hub</span>
+    </a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+    <nav class="site-nav" id="site-nav" aria-label="Primary navigation">
+      <a href="/">Home</a>
+      <a href="/gpt-image-2-online.html">Online</a>
+      <a href="/gpt-image-2-free.html">Free</a>
+      <a href="/gpt-image-2-prompts.html">Prompts</a>
+      <a href="/gpt-image-2-generator.html">Generator</a>
+      <a href="/gpt-image-2-ad-generator.html">Ad Generator</a>
+      <a href="/gpt-image-2-infographic-generator.html" aria-current="page">Infographic Generator</a>
+      <a href="/gpt-image-2-api.html">API</a>
+      <a href="/how-to-use-gpt-image-2.html">Guide</a>
+      <a href="/how-to-try-gpt-image-2.html">Try</a>
+      <a href="/chatgpt-image-gen-2.html">Gen 2</a>
+      <a href="/gpt-images-2-0.html">Images 2.0</a>
+      <a href="/chatgpt-images-2-0.html">ChatGPT 2.0</a>
+      <a href="/openai-image-2.html">OpenAI 2</a>
+      <a href="/got-image-2.html">Got</a>
+      <a href="/gpt-image-2-demo.html">Demo</a>
+      <a href="/gpt-image-2-release-date.html">Release Date</a>
+      <a href="/gpt-image-2-vs-nanobanana.html">Vs Nano Banana</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="info-shell">
+      <div class="info-hero-grid">
+        <div class="info-hero-copy">
+          <p class="eyebrow">Diagram Workflow</p>
+          <h1>GPT Image 2 Infographic Generator</h1>
+          <p class="hero-copy">Turn ideas into structured visual diagrams with AI</p>
+          <p class="hero-support">Perfect for charts, product breakdowns, and educational visuals</p>
+          <div class="hero-actions">
+            <a class="button primary" href="https://www.aicovea.com/gpt-image-2" target="_blank" rel="noopener">Generate Infographic Now</a>
+            <a class="button secondary" href="#infographic-prompt-examples">View Prompt Examples</a>
+          </div>
+          <div class="info-note">Styled to match the rest of the site: soft light background, white cards, blue primary CTAs, and green structure accents.</div>
+        </div>
+        <aside class="info-board" aria-label="Infographic generator preview">
+          <div class="info-board-top">
+            <div>
+              <div class="info-badge">Structured output</div>
+              <strong>Prompt to diagram flow</strong>
+            </div>
+            <div class="info-pill">Layout driven</div>
+          </div>
+          <div class="info-layout">
+            <div class="info-layout-top">
+              <div class="info-panel">
+                <span>Prompt</span>
+                <strong>Electric car structure infographic</strong>
+                <p>Labeled components, white background, engineering diagram style, clean reading order.</p>
+              </div>
+              <div class="info-panel">
+                <span>Output</span>
+                <strong>Diagram + labels</strong>
+                <p>Sections, arrows, titles, and chart-ready spacing.</p>
+              </div>
+            </div>
+            <div class="info-flow">
+              <div class="info-step">
+                <span>Step 1</span>
+                <strong>Define layout</strong>
+                <p>Choose timeline, cutaway, chart, or comparison.</p>
+              </div>
+              <div class="info-step">
+                <span>Step 2</span>
+                <strong>Add labels</strong>
+                <p>Name the visible sections that must stay readable.</p>
+              </div>
+              <div class="info-step">
+                <span>Step 3</span>
+                <strong>Generate</strong>
+                <p>Turn the brief into a structured teaching visual.</p>
+              </div>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="content-section">
+      <div class="section-heading">
+        <p class="eyebrow">Use Cases</p>
+        <h2>Generate Infographics with GPT Image 2</h2>
+        <p class="wide-copy">When the goal is explanation instead of purely decorative imagery, prompt structure matters more. GPT Image 2 infographic workflows are useful for product breakdowns, architecture diagrams, educational explainers, labeled system maps, and clear chart-like visuals.</p>
+      </div>
+      <div class="info-grid three">
+        <article class="feature-block">
+          <h3>Explain Complex Ideas</h3>
+          <p>Turn a dense topic into a layout with sections, short labels, and a reading order that feels more like a tool page than a poster.</p>
+        </article>
+        <article class="feature-block">
+          <h3>Build Diagram Variants Fast</h3>
+          <p>Use a single prompt structure to explore cutaway views, system diagrams, step flows, and comparison charts without redrafting the whole brief.</p>
+        </article>
+        <article class="feature-block">
+          <h3>Create More Readable Visuals</h3>
+          <p>Structured prompts help separate titles, labels, icons, charts, and main objects so the output feels useful for teaching or product communication.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="content-section prompt-category" id="infographic-prompt-examples">
+      <div class="category-header">
+        <div>
+          <p class="eyebrow">Prompt Library</p>
+          <h2>Infographic Prompt Examples</h2>
+        </div>
+        <p>These prompts focus on information-rich layouts. Keep the structure and swap the topic, labels, and visual direction for your own use case.</p>
+      </div>
+      <div class="prompt-library-grid">
+        <article class="prompt-example-card">
+          <div class="info-preview" aria-hidden="true">
+            <div class="info-preview-badge">Engineering</div>
+            <div class="diagram-layer">
+              <div></div>
+              <div></div>
+              <div></div>
+            </div>
+            <div class="info-preview-title">Electric car structure</div>
+          </div>
+          <div class="prompt-card-top">
+            <h3>Electric Car Diagram</h3>
+            <span class="prompt-tag">Diagram</span>
+          </div>
+          <p class="prompt-body">Detailed infographic of electric car structure, labeled components, clean white background, engineering diagram style</p>
+          <button class="copy-button" type="button" data-copy-prompt>Copy</button>
+        </article>
+        <article class="prompt-example-card">
+          <div class="info-preview" aria-hidden="true">
+            <div class="info-preview-badge">Cutaway</div>
+            <div class="diagram-stack">
+              <div></div>
+              <div></div>
+              <div></div>
+            </div>
+            <div class="info-preview-title">Pyramid internal structure</div>
+          </div>
+          <div class="prompt-card-top">
+            <h3>Pyramid Cutaway</h3>
+            <span class="prompt-tag">Education</span>
+          </div>
+          <p class="prompt-body">Educational infographic of pyramid internal structure, cutaway view, labeled chambers, neutral tones</p>
+          <button class="copy-button" type="button" data-copy-prompt>Copy</button>
+        </article>
+        <article class="prompt-example-card">
+          <div class="info-preview" aria-hidden="true">
+            <div class="info-preview-badge">Marketing</div>
+            <div class="diagram-bars">
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+            </div>
+            <div class="info-preview-title">5 growth strategies</div>
+          </div>
+          <div class="prompt-card-top">
+            <h3>Growth Strategy Infographic</h3>
+            <span class="prompt-tag">Marketing</span>
+          </div>
+          <p class="prompt-body">Marketing infographic showing 5 growth strategies, icons, charts, modern layout</p>
+          <button class="copy-button" type="button" data-copy-prompt>Copy</button>
+        </article>
+        <article class="prompt-example-card">
+          <div class="info-preview" aria-hidden="true">
+            <div class="info-preview-badge">Social</div>
+            <div class="diagram-grid">
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+            </div>
+            <div class="info-preview-title">Color blocks + icons</div>
+          </div>
+          <div class="prompt-card-top">
+            <h3>Social Media Infographic</h3>
+            <span class="prompt-tag">Social</span>
+          </div>
+          <p class="prompt-body">Social media infographic, bold typography, colorful blocks, minimal icons</p>
+          <button class="copy-button" type="button" data-copy-prompt>Copy</button>
+        </article>
+        <article class="prompt-example-card">
+          <div class="info-preview" aria-hidden="true">
+            <div class="info-preview-badge">Comparison</div>
+            <div class="diagram-columns">
+              <div></div>
+              <div></div>
+            </div>
+            <div class="info-preview-title">Side-by-side chart</div>
+          </div>
+          <div class="prompt-card-top">
+            <h3>Product Comparison Chart</h3>
+            <span class="prompt-tag">Comparison</span>
+          </div>
+          <p class="prompt-body">Product comparison chart infographic, side-by-side layout, clean UI</p>
+          <button class="copy-button" type="button" data-copy-prompt>Copy</button>
+        </article>
+        <article class="prompt-example-card">
+          <div class="info-preview" aria-hidden="true">
+            <div class="info-preview-badge">Timeline</div>
+            <div class="diagram-timeline">
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+            </div>
+            <div class="info-preview-title">Step-by-step flow</div>
+          </div>
+          <div class="prompt-card-top">
+            <h3>Timeline Infographic</h3>
+            <span class="prompt-tag">Timeline</span>
+          </div>
+          <p class="prompt-body">Timeline infographic, step-by-step visual flow, modern design</p>
+          <button class="copy-button" type="button" data-copy-prompt>Copy</button>
+        </article>
+      </div>
+    </section>
+
+    <section class="content-section">
+      <div class="section-heading">
+        <p class="eyebrow">Why It Works</p>
+        <h2>Why GPT Image 2 Works for Diagrams</h2>
+      </div>
+      <div class="info-grid three">
+        <article class="feature-block">
+          <h3>Handles Structured Layouts Well</h3>
+          <p>Infographics work better when you can describe blocks, sections, hierarchy, and chart zones explicitly instead of asking for a generic visual summary.</p>
+        </article>
+        <article class="feature-block">
+          <h3>Accurate Text Rendering For Labels</h3>
+          <p>Teaching visuals and diagrams rely on readable labels. Short explicit titles and section names make the output more useful for communication.</p>
+        </article>
+        <article class="feature-block">
+          <h3>Multi-Element Composition</h3>
+          <p>Diagram prompts often combine icons, blocks, arrows, labels, and central objects. Multi-element composition matters because these pieces need to coexist cleanly in one frame.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="content-section">
+      <div class="section-heading">
+        <p class="eyebrow">Real Workflow</p>
+        <h2>Try It Now</h2>
+      </div>
+      <div class="workflow-cta">
+        <div>
+          <h3>Generate diagrams, charts, and educational visuals faster</h3>
+          <p>Use a structured prompt, keep the labels short, and move into GPT Image 2 when you want a cleaner path from rough idea to readable infographic layout.</p>
+        </div>
+        <a class="button primary" href="https://www.aicovea.com/gpt-image-2" target="_blank" rel="noopener">Try GPT Image 2 Generator</a>
+      </div>
+    </section>
+
+    <section class="content-section faq-section">
+      <div class="section-heading">
+        <p class="eyebrow">FAQ</p>
+        <h2>FAQ</h2>
+      </div>
+      <div class="faq-list">
+        <details>
+          <summary>What is a GPT Image 2 infographic generator?</summary>
+          <p>It is a prompt-based workflow for generating diagrams, charts, and educational visuals with clearer structural guidance.</p>
+        </details>
+        <details>
+          <summary>What prompts work best for infographic outputs?</summary>
+          <p>Prompts that define layout type, section count, labels, chart treatment, and reading order usually work better than generic requests for an infographic.</p>
+        </details>
+        <details>
+          <summary>Can I use GPT Image 2 for architecture diagrams and product breakdowns?</summary>
+          <p>Yes. Those use cases fit well because they depend on labeled parts, grouped sections, and multiple visual elements that need to stay distinct.</p>
+        </details>
+        <details>
+          <summary>Why does text rendering matter here?</summary>
+          <p>Without readable labels, an infographic becomes illustration instead of explanation. Short, explicit labeling improves the usefulness of the output.</p>
+        </details>
+      </div>
+      <div class="section-heading" style="margin-top: 2.5rem;">
+        <p class="eyebrow">More Resources</p>
+        <h3>Keep exploring GPT Image 2</h3>
+      </div>
+      <div class="info-link-grid">
+        <a class="info-link-card" href="/gpt-image-2-prompts.html">
+          <strong>GPT Image 2 Prompts</strong>
+          <span>Explore the larger prompt library for text rendering, layout-led visuals, and image direction.</span>
+        </a>
+        <a class="info-link-card" href="/gpt-image-2-generator.html">
+          <strong>GPT Image 2 Generator</strong>
+          <span>Use the broader generator workflow if you want a more general creative starting point before narrowing into diagram outputs.</span>
+        </a>
+        <a class="info-link-card" href="/gpt-image-2-ad-generator.html">
+          <strong>GPT Image 2 Ad Generator</strong>
+          <span>Switch to the ad-focused scene when your visual work overlaps with product marketing or poster layouts.</span>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div>
+      <strong>GPT Image 2 Hub</strong>
+      <p>A lightweight resource hub for GPT Image 2 prompts, generators, ads, diagrams, and structured image workflows.</p>
+    </div>
+    <nav aria-label="Footer navigation">
+      <a href="/">Home</a>
+      <a href="/gpt-image-2-prompts.html">Prompts</a>
+      <a href="/gpt-image-2-generator.html">Generator</a>
+      <a href="/gpt-image-2-ad-generator.html">Ad Generator</a>
+      <a href="/gpt-image-2-infographic-generator.html">Infographic Generator</a>
+      <a href="/how-to-use-gpt-image-2.html">Guide</a>
+      <a href="/gpt-image-2-api.html">API</a>
+      <a href="/gpt-image-2-demo.html">Demo</a>
+    </nav>
+  </footer>
+</body>
+</html>
