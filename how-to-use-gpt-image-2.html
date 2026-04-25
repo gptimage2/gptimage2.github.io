@@ -104,6 +104,12 @@
       line-height: 1.25;
     }
 
+    .hero-step-cta {
+      width: 100%;
+      margin-top: 0.25rem;
+      text-align: center;
+    }
+
     .playground-section {
       width: min(1180px, calc(100% - 10vw));
       margin: 0 auto;
@@ -457,6 +463,7 @@
           <div class="mini-step"><span>2</span><strong>Add style, mood, and lighting</strong></div>
           <div class="mini-step"><span>3</span><strong>Control layout and text</strong></div>
           <div class="mini-step"><span>4</span><strong>Refine with specific changes</strong></div>
+          <a class="button primary hero-step-cta" href="https://www.aicovea.com/gpt-image-2" target="_blank" rel="noopener">Try free gpt image 2 online</a>
         </aside>
       </div>
     </section>
@@ -676,19 +683,7 @@
 
     document.querySelectorAll("[data-guide-demo]").forEach((button) => {
       button.addEventListener("click", () => {
-        const status = document.querySelector("[data-guide-status]");
-        button.disabled = true;
-        button.textContent = "Generating...";
-        if (status) {
-          status.innerHTML = "<strong>Submitting prompt</strong><span>Preparing a sample result preview.</span>";
-        }
-        window.setTimeout(() => {
-          button.disabled = false;
-          button.textContent = "Generate Example";
-          if (status) {
-            status.innerHTML = "<strong>Preview ready</strong><span>Continue with a fuller GPT Image 2 workflow on AICovea.</span><a class=\"result-cta\" href=\"https://www.aicovea.com/gpt-image-2\" target=\"_blank\" rel=\"noopener\">Continue on AICovea</a>";
-          }
-        }, 1100);
+        window.location.href = "https://www.aicovea.com/gpt-image-2";
       });
     });
   </script>
