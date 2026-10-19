@@ -1,0 +1,60 @@
+/* Shared ad slots, independent of each landing page's theme. */
+.adsterra-home-intro {
+  padding-bottom: 0;
+}
+
+.adsterra-home-intro .hero-intro {
+  margin-bottom: 0;
+}
+
+.adsterra-home-tool {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.adsterra-slot {
+  box-sizing: border-box;
+  width: min(1120px, 100%);
+  min-width: 0;
+  margin: 16px auto 24px;
+  padding: 10px 0;
+  border-top: 1px solid #dfe5f1;
+  border-bottom: 1px solid #dfe5f1;
+  background: #f7f8fb;
+  text-align: center;
+  clear: both;
+}
+
+.adsterra-label {
+  display: block;
+  margin: 0 0 6px;
+  color: #5d6980;
+  font: 400 10px/14px Arial, sans-serif;
+  letter-spacing: 0.06em;
+}
+
+.adsterra-banner-content {
+  display: flex;
+  justify-content: center;
+  min-height: 90px;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.adsterra-banner-content iframe {
+  display: block;
+  flex: 0 0 auto;
+  border: 0;
+}
+
+.adsterra-native-content {
+  min-height: 160px;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+@media (max-width: 767px) {
+  .adsterra-banner-content {
+    min-height: 50px;
+  }
+}
